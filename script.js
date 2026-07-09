@@ -41,14 +41,18 @@ document.addEventListener('click', e => {
     e.preventDefault();
     var name = input.value.trim();
     if (!name) return;
-
     sessionStorage.setItem('ww-visitor-name', name);
     document.dispatchEvent(new CustomEvent('ww:entered', { detail: { name: name } }));
+
+    if (window.__addVisitor) {
+      window.__addVisitor(name).catch(function (err) {
+        console.error('Could not log visitor:', err);
+      });
+    }
 
     splash.classList.add('ww-hidden');
     document.body.style.overflow = '';
   });
-
   if (!sessionStorage.getItem('ww-visitor-name')) {
     document.body.style.overflow = 'hidden';
   }
