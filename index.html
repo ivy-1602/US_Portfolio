@@ -8,6 +8,24 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    // paste YOUR real config object here, copied from the Firebase console
+  };
+
+  const app = initializeApp(firebaseConfig);
+  window.__db = getFirestore(app);
+  window.__addVisitor = (name) => addDoc(collection(window.__db, "visitors"), {
+    name: name,
+    createdAt: serverTimestamp(),
+    page: window.location.pathname
+  });
+</script>
+<script src="script.js"></script>
+  
   <div id="ww-splash">
   <div class="ww-card">
     <div class="ww-tape ww-tape--l"></div>
