@@ -13,9 +13,15 @@
   import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
   const firebaseConfig = {
-    // paste YOUR real config object here, copied from the Firebase console
-  };
+  apiKey: "AIzaSyCrHtwkRl91UnKjLkB7ccsVjns7cdbtgY8",
+  authDomain: "us-portfolio-1602.firebaseapp.com",
+  projectId: "us-portfolio-1602",
+  storageBucket: "us-portfolio-1602.firebasestorage.app",
+  messagingSenderId: "145776981030",
+  appId: "1:145776981030:web:b27ec4b3c61d07f369a2e7",
+  measurementId: "G-LGFB6JXEL5"
 
+  };
   const app = initializeApp(firebaseConfig);
   window.__db = getFirestore(app);
   window.__addVisitor = (name) => addDoc(collection(window.__db, "visitors"), {
