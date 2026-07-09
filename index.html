@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma Salunke</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="ww-splash">
+  <div class="ww-card">
+    <div class="ww-tape ww-tape--l"></div>
+    <div class="ww-tape ww-tape--r"></div>
+
+    <div class="ww-photo">
+    <img src="images/myeyes.jpeg" alt="Welcome Image">
+</div>
+
+<p class="ww-eyebrow">who's watching?</p>
+<h2 class="ww-title">Tell me your name</h2>
+<p class="ww-sub">so I know who's watching my work 👀</p>
+    <form class="ww-row" id="ww-form">
+      <input class="ww-input" id="ww-name" type="text" placeholder="your name" autocomplete="off" required />
+      <button class="ww-go" type="submit">
+        Let's go
+        <span>→</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">ivy<span class="kiwi">.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#s-about"    class="nl">About</a>
+      <a href="#s-projects" class="nl">Projects</a>
+      <a href="#s-skills"   class="nl">Skills</a>
+      <a href="#s-honors"   class="nl">Honors</a>
+      <a href="#s-beyond"   class="nl">Beyond</a>
+      <a href="#s-contact"  class="nl">Contact</a>
+    </div>
+    <a href="mailto:umasalunke7@gmail.com" class="btn-hire">Hire Me</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#s-about"    class="ml">About</a>
+  <a href="#s-projects" class="ml">Projects</a>
+  <a href="#s-skills"   class="ml">Skills</a>
+  <a href="#s-honors"   class="ml">Honors</a>
+  <a href="#s-beyond"   class="ml">Beyond</a>
+  <a href="mailto:umasalunke7@gmail.com" class="ml ml-cta">Hire Me →</a>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="home">
+
+  <!-- Animated particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Big glow rings -->
+  <div class="glow-ring ring-1"></div>
+  <div class="glow-ring ring-2"></div>
+  <div class="glow-ring ring-3"></div>
+
+  <div class="hero-stage">
+
+    <!-- Orbiting skill bubbles -->
+    <div class="orbit-wrap" aria-hidden="true">
+      <div class="orbit orbit-outer">
+        <div class="ob ob-design" style="--a:0deg">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
+          <span>UI/UX</span>
+        </div>
+        <div class="ob ob-edit" style="--a:72deg">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Content</span>
+        </div>
+        <div class="ob ob-ml" style="--a:144deg">
+          <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="5" stroke="currentColor" stroke-width="2"/><line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" stroke-width="2"/><path d="M2 12c0 5.52 4.48 10 10 10S22 17.52 22 12" stroke="currentColor" stroke-width="2"/></svg>
+          <span>AI / ML</span>
+        </div>
+        <div class="ob ob-android" style="--a:216deg">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 16V8a7 7 0 0 1 14 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="2" y="11" width="3" height="5" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="19" y="11" width="3" height="5" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M9 21h6M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Android</span>
+        </div>
+        <div class="ob ob-code" style="--a:288deg">
+          <svg viewBox="0 0 24 24" fill="none"><polyline points="16 18 22 12 16 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="8 6 2 12 8 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Code</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center content -->
+    <div class="hero-center">
+      <h1 class="hero-name">
+        <span class="hn-uma">uma</span>
+        <span class="hn-salunke">salunke</span>
+      </h1>
+      <p class="hero-tagline">UI/UX Designer · Creative Content Designer · AI/ML</p>
+      <p class="hero-sub">Colorful, human-first design — built with intention, not templates.</p>
+      <div class="hero-btns">
+        <a href="#s-projects" class="btn-primary">View Projects</a>
+        <a href="mailto:umasalunke7@gmail.com" class="btn-ghost">Say Hello</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom scroll cue -->
+  <div class="hero-scroll-cue">
+    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════ PATH ═══════════════ -->
+<div class="path-wrap" id="pathWrap">
+
+  <!-- ── UNIT 1: ABOUT + EXP ── -->
+  <div class="legend-banner" id="s-about">
+    <div class="lb-shimmer"></div>
+    <div class="lb-crown">
+      <svg viewBox="0 0 40 32" fill="none">
+        <path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/>
+      </svg>
+    </div>
+    <div class="lb-text">
+      <div class="lb-section">SECTION 1 · UNIT 1</div>
+      <div class="lb-title">About &amp; Experience</div>
+    </div>
+    <div class="lb-xp">
+      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="100"></div></div>
+      <span class="lb-xp-label">100 XP</span>
+    </div>
+  </div>
+
+  <div class="unit-body">
+    <!-- About card -->
+    <div class="split-layout">
+      <div class="about-hero-card reveal">
+        <div class="ahc-bg"></div>
+        <div class="ahc-content">
+          <div class="ahc-eyebrow">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="white" stroke-width="1.8"/><path d="M3 17c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+            UI/UX Designer &amp; Creative Content Writer · Design Community Lead · Pune
+          </div>
+          <h2 class="ahc-heading">design first,<br>code when it counts.</h2>
+          <p class="ahc-body">I design interfaces, write the content that lives inside them, and lead the community that builds both — day to day, that's Figma boards, Photoshop edits, Illustrator mockups, and Adobe Express drafts, not just code.</p>
+          <p class="ahc-body">The AI/ML background is the twist: it means I design with a systems mindset most designers don't have. Scored 97 in English Boards, and still the person polishing a manuscript at 11 PM.</p>
+          <div class="ahc-links">
+            <a href="https://linkedin.com/in/umasalunke7" target="_blank" class="ahc-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.5A6 6 0 0 1 16 8zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/ivy-1602" target="_blank" class="ahc-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+              GitHub
+            </a>
+            <a href="https://g.dev/umasalunke7" target="_blank" class="ahc-link ahc-link-kiwi">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/></svg>
+              G.Dev
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience timeline -->
+      <div class="exp-panel reveal">
+        <div class="exp-eyebrow">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="#FF9600" stroke-width="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#FF9600" stroke-width="2"/></svg>
+          Experience
+        </div>
+
+        <div class="exp-track">
+          <div class="exp-item ei-active">
+            <div class="ei-node">
+              <svg viewBox="0 0 16 16" fill="none"><polyline points="13 4 6 11 3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="ei-content">
+              <div class="ei-top">
+                <span class="ei-role">UI/UX Designer &amp; Creative Content Writer</span>
+                <span class="ei-now">NOW</span>
+              </div>
+              <span class="ei-org">LocalDev · Content &amp; Design Junior Lead · Jan 2026</span>
+              <p class="ei-note">Designing interfaces and writing content across digital platforms — the two things I never want to separate.</p>
+              <div class="ei-chips">
+                <span class="chip-b">Figma</span><span class="chip-b">Photoshop</span><span class="chip-b">Illustrator</span><span class="chip-b">Adobe Express</span><span class="chip-b">Content Writing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item ei-active">
+            <div class="ei-node">
+              <svg viewBox="0 0 16 16" fill="none"><polyline points="13 4 6 11 3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="ei-content">
+              <div class="ei-top">
+                <span class="ei-role">Core Member — Leading Design &amp; Community</span>
+                <span class="ei-now">NOW</span>
+              </div>
+              <span class="ei-org">CDSC · Student Tech Community · SCOE · Oct 2025</span>
+              <p class="ei-note">Leading UI/UX and documentation for our student community — shaping learning paths, content, and outreach across DSA, AI/ML, Web Dev, and Design tracks.</p>
+              <div class="ei-chips">
+                <span class="chip-b">Leadership</span><span class="chip-b">Design Systems</span><span class="chip-b">Community Building</span><span class="chip-b">Recruitment</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="exp-item ei-ghost">
+            <div class="ei-node ei-node-ghost">
+              <svg viewBox="0 0 16 16" fill="none"><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <div class="ei-content">
+              <div class="ei-top">
+                <span class="ei-role">Assistant Editor</span>
+                <span class="ei-badge-gray">2023 – Now</span>
+              </div>
+              <span class="ei-org">Anonymous Author · Remote</span>
+              <p class="ei-note">Manuscript editing, structural feedback, content development. The work that shapes a book into what it's supposed to be.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Path connector -->
+  <div class="path-connector">
+    <div class="pc-line"></div>
+    <div class="pc-node pn-done">
+      <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <div class="pc-line"></div>
+  </div>
+
+  <!-- ── UNIT 2: PROJECTS MAP ── -->
+  <div class="legend-banner" id="s-projects">
+    <div class="lb-shimmer"></div>
+    <div class="lb-crown">
+      <svg viewBox="0 0 40 32" fill="none"><path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/></svg>
+    </div>
+    <div class="lb-text">
+      <div class="lb-section">SECTION 1 · UNIT 2</div>
+      <div class="lb-title">Projects I've Built</div>
+    </div>
+    <div class="lb-xp">
+      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="100"></div></div>
+      <span class="lb-xp-label">6 / 6</span>
+    </div>
+  </div>
+
+  <div class="unit-body">
+    <!-- Project path map -->
+    <div class="proj-map">
+      <!-- Main featured node -->
+      <div class="pm-row pm-center">
+        <div class="pm-node pm-feat reveal">
+          <div class="pm-check pm-check-kiwi">
+            <svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="pm-badges"><span class="pb pb-kiwi">Featured</span><span class="pb pb-blue">UI/UX + Android</span></div>
+          <h3 class="pm-title">Cursive</h3>
+          <p class="pm-desc">Privacy-first mood journaling app — designed a vintage-parchment aesthetic across 13 screens, mood-based theming, and the interactions underneath it. Built in 6 days.</p>
+          <blockquote class="pm-quote">"Analytical minds need emotional check-ins just as much as anyone else."</blockquote>
+          <div class="pm-stack"><span class="stk">Kotlin</span><span class="stk">MVVM</span><span class="stk">Firebase</span></div>
+          <div class="pm-foot"><span class="pm-date">Feb 2026</span><a href="https://github.com/ivy-1602/Cursive" target="_blank" class="pm-link">GitHub →</a></div>
+        </div>
+      </div>
+
+      <!-- Branch line -->
+      <div class="pm-branch-line"></div>
+
+      <!-- Row 2: 2 nodes -->
+      <div class="pm-row pm-two">
+        <div class="pm-node pm-side reveal">
+          <div class="pm-check pm-check-pumpkin"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="pm-badges"><span class="pb pb-pumpkin">AI · Claude API</span></div>
+          <h3 class="pm-title">GiftHub</h3>
+          <p class="pm-desc">Gift engine — static, no backend. Claude AI writes personalized gift explanations for each quiz match.</p>
+          <div class="pm-stack"><span class="stk">Vanilla JS</span><span class="stk">Claude API</span><span class="stk">Vercel</span></div>
+          <div class="pm-foot"><span class="pm-date">May 2026</span><a href="https://gift-hub-for-your-loved-ones.vercel.app" target="_blank" class="pm-link">Live →</a></div>
+        </div>
+        <div class="pm-node pm-side reveal">
+          <div class="pm-check pm-check-banana"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="pm-badges"><span class="pb pb-banana">Student Product</span></div>
+          <h3 class="pm-title">LabLoot</h3>
+          <p class="pm-desc">The Academic Black Market — legal. SPPU notes & lab packs with GA4, SEO, search, security.</p>
+          <div class="pm-stack"><span class="stk">HTML/CSS/JS</span><span class="stk">Vercel</span><span class="stk">GA4</span></div>
+          <div class="pm-foot"><span class="pm-date">Mar 2026</span><a href="https://github.com/ivy-1602/LabLoot-The-Academic-Black-Market-but-legal" target="_blank" class="pm-link">GitHub →</a></div>
+        </div>
+      </div>
+
+      <div class="pm-branch-line"></div>
+
+      <!-- Row 3: 3 nodes -->
+      <div class="pm-row pm-three">
+        <div class="pm-node pm-sm reveal">
+          <div class="pm-check pm-check-kiwi"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="pm-badges"><span class="pb pb-kiwi">ML · Research</span></div>
+          <h3 class="pm-title">GNSS Prediction</h3>
+          <p class="pm-desc">LSTM predicting satellite errors 24h ahead.</p>
+          <div class="pm-stack"><span class="stk">Python</span><span class="stk">LSTM</span></div>
+          <div class="pm-foot"><span class="pm-date">Nov 2025</span></div>
+        </div>
+        <div class="pm-node pm-sm reveal">
+          <div class="pm-check pm-check-blue"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="pm-badges"><span class="pb pb-blue">Platform</span></div>
+          <h3 class="pm-title">LetsConnect</h3>
+          <p class="pm-desc">Mentor-mentee matching. Firebase auth, real-time DB.</p>
+          <div class="pm-stack"><span class="stk">Android Studio</span><span class="stk">Firebase</span></div>
+          <div class="pm-foot"><span class="pm-date">Jun 2025</span></div>
+        </div>
+        <div class="pm-node pm-sm pm-origin reveal">
+          <div class="pm-check pm-check-ghost"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="pm-badges"><span class="pb pb-cloud">Origin Story</span></div>
+          <h3 class="pm-title">Shree Om</h3>
+          <p class="pm-desc">Made in Notepad. For my father's shop. 9th std. The one that started everything.</p>
+          <div class="pm-stack"><span class="stk">HTML</span><span class="stk">Notepad.exe</span></div>
+          <div class="pm-foot"><span class="pm-date">2019</span><a href="https://github.com/ivy-1602/Shree-Om-Ent-USS-2019-Computer-Fun" target="_blank" class="pm-link">GitHub →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="path-connector">
+    <div class="pc-line"></div>
+    <div class="pc-node pn-done"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="pc-line"></div>
+  </div>
+
+  <!-- ── UNIT 3: SKILLS MINDMAP ── -->
+  <div class="legend-banner" id="s-skills">
+    <div class="lb-shimmer"></div>
+    <div class="lb-crown"><svg viewBox="0 0 40 32" fill="none"><path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/></svg></div>
+    <div class="lb-text">
+      <div class="lb-section">SECTION 2 · UNIT 1</div>
+      <div class="lb-title">Skills &amp; Toolkit</div>
+    </div>
+    <div class="lb-xp">
+      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="85"></div></div>
+      <span class="lb-xp-label">85 XP</span>
+    </div>
+  </div>
+
+  <div class="unit-body">
+    <!-- MINDMAP -->
+    <div class="mindmap reveal">
+      <!-- Center -->
+      <div class="mm-center">
+        <div class="mm-core">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.84 2.61 7.06 6.1 8.58C11.39 17.85 11.7 18 12 18s.61-.15.9-.42C16.39 16.06 19 12.84 19 9c0-3.87-3.13-7-7-7z" fill="white"/><circle cx="12" cy="9" r="2.5" fill="#FFB020"/></svg>
+          <span>Uma</span>
+        </div>
+        <!-- Lines to clusters (SVG overlay) -->
+        <svg class="mm-lines" viewBox="0 0 700 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <!-- center ~350,250; clusters roughly at corners+sides -->
+          <line x1="350" y1="250" x2="120" y2="100" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="350" y1="250" x2="580" y2="100" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="350" y1="250" x2="80"  y2="300" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="350" y1="250" x2="620" y2="300" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="350" y1="250" x2="200" y2="430" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+          <line x1="350" y1="250" x2="500" y2="430" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
+        </svg>
+      </div>
+
+      <!-- Cluster cards floating around -->
+      <div class="mm-cluster mm-tl">
+        <div class="mm-cluster-head mm-ch-pumpkin">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M16.5 3a2.5 2.5 0 0 1 0 3.5l-10 10L3 18l1.5-3.5 10-10A2.5 2.5 0 0 1 16.5 3z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Design
+        </div>
+        <div class="mm-pills">
+          <span class="mp mp-p">Photoshop</span><span class="mp mp-p">Illustrator</span><span class="mp mp-p">Adobe Express</span><span class="mp mp-p">Figma</span><span class="mp mp-p">Canva</span><span class="mp mp-p">UI/UX</span><span class="mp mp-p">Editorial Design</span>
+        </div>
+      </div>
+
+      <div class="mm-cluster mm-tr">
+        <div class="mm-cluster-head mm-ch-banana">
+          <svg viewBox="0 0 20 20" fill="none"><polygon points="10 2 12.5 7 18 7.6 14 11.4 15.1 17 10 14.3 4.9 17 6 11.4 2 7.6 7.5 7" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Prompt Eng.
+        </div>
+        <div class="mm-pills">
+          <span class="mp mp-y">System Prompting</span><span class="mp mp-y">Few-Shot</span><span class="mp mp-y">Chain-of-Thought</span><span class="mp mp-y">Structured Output</span>
+        </div>
+      </div>
+
+      
+      <div class="mm-cluster mm-mr">
+        <div class="mm-cluster-head mm-ch-kiwi">
+          <svg viewBox="0 0 20 20" fill="none"><polyline points="14 15 18 10 14 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6 5 2 10 6 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Languages
+        </div>
+        <div class="mm-pills">
+          <span class="mp mp-k">Python</span><span class="mp mp-k">Kotlin</span><span class="mp mp-k">Java</span><span class="mp mp-k">JavaScript</span><span class="mp mp-k">SQL</span><span class="mp mp-k">HTML/CSS</span>
+        </div>
+      </div>
+
+      <div class="mm-cluster mm-bl">
+        <div class="mm-cluster-head mm-ch-blue">
+          <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="11" rx="2" stroke="white" stroke-width="1.8"/><line x1="7" y1="18" x2="13" y2="18" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="10" y1="14" x2="10" y2="18" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Development
+        </div>
+        <div class="mm-pills">
+          <span class="mp mp-b">Android Studio</span><span class="mp mp-b">React</span><span class="mp mp-b">Node.js</span><span class="mp mp-b">Firebase</span><span class="mp mp-b">Vercel</span><span class="mp mp-b">Supabase</span>
+        </div>
+      </div>
+
+      <div class="mm-cluster mm-br">
+        <div class="mm-cluster-head mm-ch-jelly">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="white" stroke-width="1.8"/><path d="M6 10c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="10" r="1.5" fill="white"/></svg>
+          AI / ML
+        </div>
+        <div class="mm-pills">
+          <span class="mp mp-j">TensorFlow</span><span class="mp mp-j">scikit-learn</span><span class="mp mp-j">LSTM</span><span class="mp mp-j">NLP</span><span class="mp mp-j">Claude API</span>
+        </div>
+      </div>
+      <div class="mm-cluster mm-ml">
+        <div class="mm-cluster-head mm-ch-rasp">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M10 2c-1.1 0-2 .9-2 2v2H4v2h1l1 8h8l1-8h1V6h-4V4c0-1.1-.9-2-2-2zM8 6V4h4v2H8z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Languages Spoken
+        </div>
+        <div class="mm-pills">
+          <span class="mp mp-r">English <em>Fluent</em></span>
+          <span class="mp mp-r">Hindi <em>Native</em></span>
+          <span class="mp mp-r">Marathi <em>Native</em></span>
+          <span class="mp mp-r">Spanish <em>Learning</em></span>
+          <span class="mp mp-r">German <em>Learning</em></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="path-connector">
+    <div class="pc-line"></div>
+    <div class="pc-node pn-done"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="pc-line"></div>
+  </div>
+
+  <!-- ── UNIT 4: HONORS ── -->
+  <div class="legend-banner" id="s-honors">
+    <div class="lb-shimmer"></div>
+    <div class="lb-crown"><svg viewBox="0 0 40 32" fill="none"><path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/></svg></div>
+    <div class="lb-text">
+      <div class="lb-section">SECTION 2 · UNIT 2</div>
+      <div class="lb-title">Honors &amp; Achievements</div>
+    </div>
+    <div class="lb-xp">
+      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="100"></div></div>
+      <span class="lb-xp-label">100 XP</span>
+    </div>
+  </div>
+
+  <div class="unit-body">
+    <div class="honors-list">
+      <div class="hon-item hon-gold reveal">
+        <div class="hon-icon hon-i-gold"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#FFC300" stroke="#FFC300" stroke-width="1"/></svg></div>
+        <div class="hon-body"><div class="hon-title">Head Girl Prefect</div><div class="hon-sub">Reappointed on merit · 4 consecutive years</div></div>
+        <span class="hon-yr">2019–23</span>
+      </div>
+      <div class="hon-item hon-kiwi reveal">
+        <div class="hon-icon hon-i-kiwi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z" stroke="#7AC70C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hon-body"><div class="hon-title">97/100 English — CBSE Boards</div><div class="hon-sub">Topped Maharashtra</div></div>
+        <span class="hon-yr">2022</span>
+      </div>
+      <div class="hon-item hon-blue reveal">
+        <div class="hon-icon hon-i-blue"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7a2 2 0 0 1 1.72 2.03z" stroke="#1CB0F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hon-body"><div class="hon-title">FE Induction Ceremony Speaker</div><div class="hon-sub">First Year Rank Holder · SCOE</div></div>
+        <span class="hon-yr">2025</span>
+      </div>
+      <div class="hon-item reveal">
+        <div class="hon-icon hon-i-pumpkin"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="7" stroke="#FA811B" stroke-width="2"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" stroke="#FA811B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hon-body"><div class="hon-title">Runner-Up — AI-Powered Web Dev</div><div class="hon-sub">College level competition</div></div>
+        <span class="hon-yr">2026</span>
+      </div>
+      <div class="hon-item reveal">
+        <div class="hon-icon hon-i-jelly"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="7" stroke="#8549BA" stroke-width="2"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" stroke="#8549BA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hon-body"><div class="hon-title">Winner — Prompt-Driven UI Design</div><div class="hon-sub">College level contest</div></div>
+        <span class="hon-yr">2025</span>
+      </div>
+      <div class="hon-item reveal">
+        <div class="hon-icon hon-i-kiwi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#7AC70C"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="#7AC70C" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div class="hon-body"><div class="hon-title">District Rank 1</div><div class="hon-sub">Chess &amp; Badminton</div></div>
+        <span class="hon-yr">2022</span>
+      </div>
+      <div class="hon-item reveal">
+        <div class="hon-icon hon-i-pumpkin"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#FA811B" stroke-width="2"/><polyline points="12 6 12 12 16 14" stroke="#FA811B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hon-body"><div class="hon-title">Girls Basketball Team Captain</div><div class="hon-sub">Team leadership</div></div>
+        <span class="hon-yr">2021–23</span>
+      </div>
+      <div class="hon-item reveal">
+        <div class="hon-icon hon-i-blue"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1CB0F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="#1CB0F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="hon-body"><div class="hon-title">Best Research Report Award</div><div class="hon-sub">Narcotics Control</div></div>
+        <span class="hon-yr">2021</span>
+      </div>
+    </div>
+
+    <!-- Certs -->
+    <div class="certs-wrap reveal">
+      <div class="certs-eyebrow">Certifications &amp; Simulations</div>
+      <div class="certs-grid">
+                <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><path d="M17 7A7 7 0 0 0 3 7c0 5 7 11 7 11s7-6 7-11z" stroke="#FA811B" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="7" r="2" fill="#FA811B"/></svg><div><span>Human-Centered Design</span><em>Canva</em></div></div>
+        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#1CB0F6" stroke-width="1.8"/><path d="M2 10h16M10 2a13 13 0 0 1 3 8 13 13 0 0 1-3 8 13 13 0 0 1-3-8 13 13 0 0 1 3-8z" stroke="#1CB0F6" stroke-width="1.8"/></svg><div><span>AI in Education</span><em>Canva</em></div></div>
+
+        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="12" rx="2" stroke="#7AC70C" stroke-width="1.8"/><line x1="7" y1="18" x2="13" y2="18" stroke="#7AC70C" stroke-width="1.8" stroke-linecap="round"/></svg><div><span>GenAI Powered Data Analytics</span></div></div>
+        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><path d="M10 18s7-3 7-8V4L10 2 3 4v6c0 5 7 8 7 8z" stroke="#FA811B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><span>Solutions Architecture</span><em>AWS</em></div></div>
+        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><line x1="10" y1="1" x2="10" y2="19" stroke="#FFC300" stroke-width="1.8" stroke-linecap="round"/><path d="M14 4H8a2.5 2.5 0 1 0 0 5h4a2.5 2.5 0 1 1 0 5H5" stroke="#FFC300" stroke-width="1.8" stroke-linecap="round"/></svg><div><span>Operations Simulation</span><em>Goldman Sachs</em></div></div>
+        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><polygon points="5 3 17 10 5 17" fill="#8549BA"/></svg><div><span>Software Engineering</span><em>Electronic Arts</em></div></div>
+        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#1CB0F6" stroke-width="1.8"/><path d="M2 10h16M10 2a13 13 0 0 1 3 8 13 13 0 0 1-3 8 13 13 0 0 1-3-8 13 13 0 0 1 3-8z" stroke="#1CB0F6" stroke-width="1.8"/></svg><div><span>AI in Education</span><em>Canva</em></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="path-connector">
+    <div class="pc-line"></div>
+    <div class="pc-node pn-active"><svg viewBox="0 0 24 24" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="white"/></svg></div>
+    <div class="pc-line"></div>
+  </div>
+
+  <!-- ── UNIT 5: BEYOND ── -->
+  <div class="legend-banner lb-rasp" id="s-beyond">
+    <div class="lb-shimmer"></div>
+    <div class="lb-crown"><svg viewBox="0 0 40 32" fill="none"><path d="M20 4l4 8 9 1.3-6.5 6.3 1.5 9L20 24l-8 4.6L13.5 19.6 7 13.3 16 12z" fill="white" opacity=".9"/></svg></div>
+    <div class="lb-text">
+      <div class="lb-section">SECTION 3 · UNIT 1</div>
+      <div class="lb-title">Beyond the Build</div>
+    </div>
+    <div class="lb-xp">
+      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="70"></div></div>
+      <span class="lb-xp-label">In Progress</span>
+    </div>
+  </div>
+
+  <div class="unit-body">
+    <div class="beyond-layout">
+      <div class="beyond-quote-card reveal">
+        <div class="bq-bar"></div>
+        <p class="bq-text">"I am in my melancholy lot but I am so productive, it's an art."</p>
+        <p class="bq-src">— from the Cursive README</p>
+        <p class="bq-body">Designer Monday, manuscript Tuesday. Same eye for detail, different canvas.</p>
+      </div>
+      <div class="beyond-cards">
+        <div class="bcard bc-blue reveal">
+          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="white" stroke-width="2"/><circle cx="18" cy="16" r="3" stroke="white" stroke-width="2"/></svg></div>
+          <h3>Playback Singer &amp; Pianist</h3>
+          <p>Music is where structure and emotion stop arguing.</p>
+        </div>
+        <div class="bcard bc-kiwi reveal">
+          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Draft-Based Novel Writing</h3>
+          <p>Never done until it's finally done.</p>
+        </div>
+        <div class="bcard bc-pumpkin reveal">
+          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="7" r="1.5" fill="white"/></svg></div>
+          <h3>Editorial Design</h3>
+          <p>The kerning kind, not the template kind.</p>
+        </div>
+        <div class="bcard bc-jelly reveal">
+          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="9" height="9" rx="2" stroke="white" stroke-width="2"/><rect x="13" y="2" width="9" height="9" rx="2" stroke="white" stroke-width="2"/><rect x="2" y="13" width="9" height="9" rx="2" stroke="white" stroke-width="2"/><rect x="13" y="13" width="9" height="9" rx="2" stroke="white" stroke-width="2"/></svg></div>
+          <h3>Chess &amp; Badminton</h3>
+          <p>The move you don't make matters just as much.</p>
+        </div>
+        <div class="bcard bc-rasp reveal">
+          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Culinary Arts</h3>
+          <p>You break the system, someone eats the result.</p>
+        </div>
+        <div class="bcard bc-banana reveal">
+          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>English Literature</h3>
+          <p>Precision in prose taught me precision in code.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /path-wrap -->
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section class="contact-sec" id="s-contact">
+  <div class="contact-glow"></div>
+  <div class="contact-inner">
+    <h2 class="contact-h">let's<br><span>talk</span></h2>
+    <p class="contact-sub">Project, collaboration, role, or just a good conversation.</p>
+    <div class="contact-cards">
+      <a href="mailto:umasalunke7@gmail.com" class="cc cc-kiwi">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>umasalunke7@gmail.com</span>
+      </a>
+      <a href="https://linkedin.com/in/umasalunke7" target="_blank" class="cc cc-blue">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.5A6 6 0 0 1 16 8zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+        <span>linkedin/umasalunke7</span>
+      </a>
+      <a href="https://github.com/ivy-1602" target="_blank" class="cc cc-dark">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+        <span>github/ivy-1602</span>
+      </a>
+      <a href="https://x.com/umasalunke16" target="_blank" class="cc cc-jelly">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>@umasalunke16</span>
+      </a>
+    </div>
+    <a href="mailto:umasalunke7@gmail.com" class="btn-primary btn-contact-cta">Say Hello →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <span class="f-logo">ivy<span class="kiwi">.</span></span>
+  <span class="f-mid">Designs.Novel drafts. Piano keys. LSTM models. Same curiosity, different outputs.</span>
+  <span class="f-copy">© 2026 Uma Salunke</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
