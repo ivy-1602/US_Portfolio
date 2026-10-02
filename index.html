@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uma Salunke</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Uma Salunke — Portfolio</title>
+<meta name="description" content="Portfolio of Uma Salunke: UI/UX design, creative content, and AI/ML projects.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;700&family=Bebas+Neue&family=Big+Shoulders+Display:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Courier+Prime:wght@400;700&family=IM+Fell+DW+Pica:ital@0;1&family=Inter+Tight:wght@400;600;800&family=League+Gothic&family=Mina:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=UnifrakturMaguntia&family=Kalam:wght@4<PASSWORD>;7<PASSWORD>&family=Old+Standard+TT:ital,wght@<PASSWORD>;<PASSWORD>;1,4<PASSWORD>&family=Parisienne&family=Permanent+Marker&family=Pinyon+Script&family=Quicksand:wght@5<PASSWORD>;7<PASSWORD>&family=Sacramento&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SW40CFQ02"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -15,6 +19,7 @@
 </script>
 </head>
 <body>
+  <!-- Firebase visitor log: kept ready for the name splash that returns later. -->
   <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
   import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
@@ -37,611 +42,569 @@
     page: window.location.pathname
   });
 </script>
-  
-  <div id="ww-splash">
+
+<div id="ww-splash" role="dialog" aria-modal="true" aria-labelledby="ww-title">
+  <canvas class="splash-glitter" aria-hidden="true"></canvas>
   <div class="ww-card">
-    <div class="ww-tape ww-tape--l"></div>
-    <div class="ww-tape ww-tape--r"></div>
-
-    <div class="ww-photo">
-    <img src="images/myeyes.jpeg" alt="Welcome Image">
-</div>
-
-<p class="ww-eyebrow">who's watching?</p>
-<h2 class="ww-title">Tell me your name</h2>
-<p class="ww-sub">so I know who's watching my work 👀</p>
-    <form class="ww-row" id="ww-form">
-      <input class="ww-input" id="ww-name" type="text" placeholder="your name" autocomplete="off" required />
-      <button class="ww-go" type="submit">
-        Let's go
-        <span>→</span>
-      </button>
+    <div class="ww-photo"><img src="images/myeyes.jpg" alt=""></div>
+    <p class="ww-eyebrow">who's watching?</p>
+    <h2 class="ww-title" id="ww-title">Tell me your name</h2>
+    <p class="ww-sub">so I know who's watching my work</p>
+    <form class="ww-row" id="ww-form" autocomplete="off">
+      <label class="sr" for="ww-name">Your name</label>
+      <input class="ww-input" id="ww-name" type="text" placeholder="your name" maxlength="60" required>
+      <button class="ww-go" type="submit">Let's go →</button>
     </form>
   </div>
 </div>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#home" class="nav-logo">ivy<span class="kiwi">.</span></a>
+
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav class="nav" id="nav" aria-label="Main">
+  <a href="#home" class="nav-logo">ivy<span>.</span></a>
+  <div class="nav-strip">
     <div class="nav-links" id="navLinks">
-      <a href="#s-about"    class="nl">About</a>
-      <a href="#s-projects" class="nl">Projects</a>
-      <a href="#s-skills"   class="nl">Skills</a>
-      <a href="#s-honors"   class="nl">Honors</a>
-      <a href="#s-beyond"   class="nl">Beyond</a>
-      <a href="#s-contact"  class="nl">Contact</a>
+      <a href="#s-about">About</a>
+      <a href="#s-skills">Skills</a>
+      <a href="#s-projects">Projects</a>
+      <a href="#s-experience">Experience</a>
+      <a href="#s-letter">My Letter</a>
+      <a href="#s-contact">Contact</a>
+      <a href="https://drive.google.com/uc?export=download&id=13EffgS2p0Ss7Y4Sz3GtT6G7TKkRJPcJ_" class="nav-hire">My Resume</a>
     </div>
-    <a href="mailto:umasalunke7@gmail.com" class="btn-hire">Hire Me</a>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobMenu"><span></span><span></span><span></span></button>
 </nav>
-<div class="mob-menu" id="mobMenu">
-  <a href="#s-about"    class="ml">About</a>
-  <a href="#s-projects" class="ml">Projects</a>
-  <a href="#s-skills"   class="ml">Skills</a>
-  <a href="#s-honors"   class="ml">Honors</a>
-  <a href="#s-beyond"   class="ml">Beyond</a>
-  <a href="mailto:umasalunke7@gmail.com" class="ml ml-cta">Hire Me →</a>
+<div class="mob-menu" id="mobMenu" hidden>
+  <a href="#s-about">About</a>
+  <a href="#s-honors">Honors</a>
+  <a href="#s-skills">Skills</a>
+  <a href="#s-projects">Projects</a>
+  <a href="#s-archive">Archive</a>
+  <a href="#s-experience">Experience</a>
+  <a href="#s-beyond">Beyond</a>
+  <a href="#s-letter">My Letter</a>
+  <a href="#s-contact">Contact</a>
+  <a href="https://drive.google.com/uc?export=download&id=13EffgS2p0Ss7Y4Sz3GtT6G7TKkRJPcJ_" class="mob-hire">My Resume</a>
 </div>
 
-<!-- ═══════════════ HERO ═══════════════ -->
-<section class="hero" id="home">
+<div class="era-chip" id="eraChip" aria-live="polite"><span>now playing:</span> <b id="eraName">The Encore</b></div>
 
-  <!-- Animated particles -->
-  <canvas id="particles"></canvas>
-
-  <!-- Big glow rings -->
-  <div class="glow-ring ring-1"></div>
-  <div class="glow-ring ring-2"></div>
-  <div class="glow-ring ring-3"></div>
-
-  <div class="hero-stage">
-
-    <!-- Orbiting skill bubbles -->
-    <div class="orbit-wrap" aria-hidden="true">
-      <div class="orbit orbit-outer">
-        <div class="ob ob-design" style="--a:0deg">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/></svg>
-          <span>UI/UX</span>
-        </div>
-        <div class="ob ob-edit" style="--a:72deg">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Content</span>
-        </div>
-        <div class="ob ob-ml" style="--a:144deg">
-          <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="10" ry="5" stroke="currentColor" stroke-width="2"/><line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" stroke-width="2"/><path d="M2 12c0 5.52 4.48 10 10 10S22 17.52 22 12" stroke="currentColor" stroke-width="2"/></svg>
-          <span>AI / ML</span>
-        </div>
-        <div class="ob ob-android" style="--a:216deg">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 16V8a7 7 0 0 1 14 0v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="2" y="11" width="3" height="5" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="19" y="11" width="3" height="5" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M9 21h6M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <span>Android</span>
-        </div>
-        <div class="ob ob-code" style="--a:288deg">
-          <svg viewBox="0 0 24 24" fill="none"><polyline points="16 18 22 12 16 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="8 6 2 12 8 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Code</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Center content -->
-    <div class="hero-center">
-      <h1 class="hero-name">
-        <span class="hn-uma">uma</span>
-        <span class="hn-salunke">salunke</span>
-      </h1>
-      <p class="hero-tagline">UI/UX Designer · Creative Content Designer · AI/ML</p>
-      <p class="hero-sub">Colorful, human-first design — built with intention, not templates.</p>
-      <div class="hero-btns">
-        <a href="#s-projects" class="btn-primary">View Projects</a>
-        <a href="mailto:umasalunke7@gmail.com" class="btn-ghost">Say Hello</a>
-      </div>
-    </div>
-
+<main>
+<!-- ═══════════ HERO · THE ENCORE ═══════════ -->
+<section class="hero" id="home" data-era="The Encore" data-chip-bg="#E15921" data-chip-ink="#000000">
+  <video class="hero-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-hidden="true">
+    <source src="shimmer.mp4" type="video/mp4">
+  </video>
+  <div class="hero-inner">
+    <p class="hero-greet" id="heroGreet" hidden></p>
+    <h1 class="hero-name" aria-label="Uma Salunke">
+      <span class="hn-line" aria-hidden="true">Uma</span>
+      <span class="hn-line hn-2" aria-hidden="true">Salunke</span>
+    </h1>
+    <p class="hero-tagline">AI/ML Engineering Student · UI/UX Designer</p>
+    
   </div>
+  <a class="hero-cue" href="#s-about" aria-label="Scroll to the first section">
+    <span>Scroll</span>
+    <i aria-hidden="true"></i>
+  </a>
+</section>
 
-  <!-- Bottom scroll cue -->
-  <div class="hero-scroll-cue">
-    <div class="scroll-mouse"><div class="scroll-dot"></div></div>
-    <span>scroll</span>
+<!-- ═══════════ 1 · DEBUT · ABOUT ═══════════ -->
+<section class="era era-debut" id="s-about" data-era="Debut" data-chip-bg="#7BC676" data-chip-ink="#10301a">
+  <div class="wrap debut-grid">
+    <figure class="debut-photo">
+      <img src="images/pfp_2026.png" alt="Close-up of Uma's eyes" loading="lazy">
+      <figcaption>hi, I'm Uma</figcaption>
+    </figure>
+    <div>
+      <p class="debut-role">
+      <h1 class="era-title">working at the intersection of technology,<br> and human experience.</h1>
+<p>I’m a 19-year-old AI/ML engineering student, working at the intersection of technology and user experience.</p>      
+<p>I build exploring how code, AI, and thoughtful design can come together to build things that are both useful and human-centered.</p>
+      <div class="link-row">
+        <a class="pill-link" href="https://linkedin.com/in/umasalunke7" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.5A6 6 0 0 1 16 8zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>LinkedIn</a>
+        <a class="pill-link" href="https://github.com/ivy-1602" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>GitHub</a>
+        <a class="pill-link" href="https://g.dev/umasalunke7" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/></svg>G.Dev</a>
+        <a class="pill-link" href="https://x.com/umasalunke16" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ═══════════════ PATH ═══════════════ -->
-<div class="path-wrap" id="pathWrap">
+<!-- ═══════════ 2 · FEARLESS · HONORS ═══════════ -->
+<section class="era era-fearless" id="s-honors" data-era="Fearless" data-chip-bg="#D4AF37" data-chip-ink="#2b210a">
+  <div class="wrap">
+    <h2 class="era-title">Honors <span class="amp">&amp;</span> Achievements</h2>
+    <div class="orn" aria-hidden="true"><i></i><b>◆</b><i></i></div>
+    <div class="sides">
+<div class="edu side">
+  <button type="button" class="edu-btn" aria-expanded="false"><span class="edu-k">Side A: Leadership &amp; Academics</span><span class="edu-sub">tap to open</span><span class="edu-plus" aria-hidden="true"></span></button>
+  <div class="edu-more"><div><div class="side-body"><ol class="setlist"><li><span class="hon-t">Head Girl Prefect</span><span class="hon-yr">2019–23</span><span class="hon-s">Reappointed on merit · 4 consecutive years</span></li><li><span class="hon-t">97/100 English — CBSE Boards</span><span class="hon-yr">2022</span><span class="hon-s">Topped Maharashtra</span></li><li><span class="hon-t">FE Induction Ceremony Speaker</span><span class="hon-yr">2025</span><span class="hon-s">First Year Rank Holder · SCOE</span></li><li><span class="hon-t">Best Research Report Award</span><span class="hon-yr">2021</span><span class="hon-s">Narcotics Control</span></li></ol></div></div></div>
+</div>
+<div class="edu side">
+  <button type="button" class="edu-btn" aria-expanded="false"><span class="edu-k">Side B: Competitions &amp; Sport</span><span class="edu-sub">tap to open</span><span class="edu-plus" aria-hidden="true"></span></button>
+  <div class="edu-more"><div><div class="side-body"><ol class="setlist"><li><span class="hon-t">Runner-Up — AI-Powered Web Dev</span><span class="hon-yr">2026</span><span class="hon-s">College level competition</span></li><li><span class="hon-t">Winner — Prompt-Driven UI Design</span><span class="hon-yr">2025</span><span class="hon-s">College level contest</span></li><li><span class="hon-t">District Rank 1</span><span class="hon-yr">2022</span><span class="hon-s">Chess &amp; Badminton</span></li><li><span class="hon-t">Girls Basketball Captain</span><span class="hon-yr">2021–23</span><span class="hon-s">Team leadership</span></li></ol></div></div></div>
+</div>
+<div class="edu">
+  <button type="button" class="edu-btn" aria-expanded="false"><span class="edu-k">Education</span><span class="edu-sub">the liner notes · tap to open</span><span class="edu-plus" aria-hidden="true"></span></button>
+  <div class="edu-more"><div><div class="edu-body">
+    <article class="edu-card">
+      <h3>Savitribai Phule Pune University</h3>
+      <p class="edu-deg">Bachelor of Engineering (B.E.) — Artificial Intelligence</p>
+      <p class="edu-yr">Jun 2024 – 2028</p>
+      <ul><li>Latest SE CGPA: <b>9.77</b>/10</li><li>Departmental rank holder</li></ul>
+    </article>
+    <article class="edu-card">
+      <h3>St. Ursula Higher Secondary School</h3>
+      <p class="edu-deg">Science</p>
+      <p class="edu-yr">Jun 2021 – Jun 2023</p>
+      <ul><li>CBSE Grade: <b>A+ 89.89 %</b></li></ul>
+    </article>
+  </div></div></div>
+</div>
+</div>
+  </div>
+</section>
 
-  <!-- ── UNIT 1: ABOUT + EXP ── -->
-  <div class="legend-banner" id="s-about">
-    <div class="lb-shimmer"></div>
-    <div class="lb-crown">
-      <svg viewBox="0 0 40 32" fill="none">
-        <path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/>
-      </svg>
-    </div>
-    <div class="lb-text">
-      <div class="lb-section">SECTION 1 · UNIT 1</div>
-      <div class="lb-title">About &amp; Experience</div>
-    </div>
-    <div class="lb-xp">
-      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="100"></div></div>
-      <span class="lb-xp-label">100 XP</span>
+<!-- ═══════════ 3 · SPEAK NOW · SKILLS ═══════════ -->
+<section class="era era-speak" id="s-skills" data-era="Speak Now" data-chip-bg="#EEDC82" data-chip-ink="#2d1a3a">
+  <div class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="speak-eyebrow">Design / Code / AI</p>
+    <h2 class="era-title">Skills &amp; Toolkit</h2>
+    <p class="era-lede">The technologies, tools, and  skills I posses.</p>
+    <div class="spells">
+      <article class="spell">
+        <button class="spell-btn" type="button" aria-expanded="false" aria-controls="spell-more-1"><h3>Design</h3><span class="love-plus" aria-hidden="true"></span></button>
+        <div class="spell-more" id="spell-more-1" role="region"><div><ul class="pills"><li>Figma</li><li>Illustrator</li><li>Adobe Express</li><li>Framer</li><li>Canva</li><li>UI/UX</li><li>Editorial Design</li></ul></div></div>
+      </article>
+      <article class="spell">
+        <button class="spell-btn" type="button" aria-expanded="false" aria-controls="spell-more-2"><h3>Prompt Engineering</h3><span class="love-plus" aria-hidden="true"></span></button>
+        <div class="spell-more" id="spell-more-2" role="region"><div><ul class="pills"><li>System Prompting</li><li>Few-Shot</li><li>Chain-of-Thought</li><li>Structured Output</li></ul></div></div>
+      </article>
+      <article class="spell">
+        <button class="spell-btn" type="button" aria-expanded="false" aria-controls="spell-more-3"><h3>Languages</h3><span class="love-plus" aria-hidden="true"></span></button>
+        <div class="spell-more" id="spell-more-3" role="region"><div><ul class="pills"><li>Python</li><li>Kotlin</li><li>Java</li><li>JavaScript</li><li>SQL</li><li>HTML/CSS</li></ul></div></div>
+      </article>
+      <article class="spell spell-wide">
+        <button class="spell-btn" type="button" aria-expanded="false" aria-controls="spell-more-4"><h3>Development</h3><span class="love-plus" aria-hidden="true"></span></button>
+        <div class="spell-more" id="spell-more-4" role="region"><div><ul class="pills"><li>Android Studio</li><li>React</li><li>Node.js</li><li>Firebase</li><li>Vercel</li><li>Supabase</li></ul></div></div>
+      </article>
+      <article class="spell spell-wide">
+        <button class="spell-btn" type="button" aria-expanded="false" aria-controls="spell-more-5"><h3>AI / ML</h3><span class="love-plus" aria-hidden="true"></span></button>
+        <div class="spell-more" id="spell-more-5" role="region"><div><ul class="pills"><li>TensorFlow</li><li>scikit-learn</li><li>LSTM</li><li>NLP</li><li>Claude API</li></ul></div></div>
+      </article>
     </div>
   </div>
+  <div class="speak-red" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0 70 C240 30 480 100 720 62 S1200 28 1440 64 V120 H0Z" fill="#7d2d5c" opacity=".5"/>
+      <path d="M0 82 C300 50 540 104 800 76 S1220 52 1440 80 V120 H0Z" fill="#a5262b" opacity=".8"/>
+      <path d="M0 82 C300 50 540 104 800 76 S1220 52 1440 80" fill="none" stroke="#eedc82" stroke-width="1.5" stroke-dasharray="2 9" stroke-linecap="round" opacity=".75"/>
+      <path d="M0 96 C360 72 620 112 900 92 S1260 78 1440 94 V120 H0Z" fill="#a5262b"/>
+    </svg>
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+</section>
 
-  <div class="unit-body">
-    <!-- About card -->
-    <div class="split-layout">
-      <div class="about-hero-card reveal">
-        <div class="ahc-bg"></div>
-        <div class="ahc-content">
-          <div class="ahc-eyebrow">
-            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="white" stroke-width="1.8"/><path d="M3 17c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
-            UI/UX Designer &amp; Creative Content Writer · Design Community Lead · Pune
-          </div>
-          <h2 class="ahc-heading">design first,<br>code when it counts.</h2>
-          <p class="ahc-body">I design interfaces, write the content that lives inside them, and lead the community that builds both — day to day, that's Figma boards, Photoshop edits, Illustrator mockups, and Adobe Express drafts, not just code.</p>
-          <p class="ahc-body">The AI/ML background is the twist: it means I design with a systems mindset most designers don't have. Scored 97 in English Boards, and still the person polishing a manuscript at 11 PM.</p>
-          <div class="ahc-links">
-            <a href="https://linkedin.com/in/umasalunke7" target="_blank" class="ahc-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.5A6 6 0 0 1 16 8zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://github.com/ivy-1602" target="_blank" class="ahc-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
-              GitHub
-            </a>
-            <a href="https://g.dev/umasalunke7" target="_blank" class="ahc-link ahc-link-kiwi">
-              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="2"/></svg>
-              G.Dev
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Experience timeline -->
-      <div class="exp-panel reveal">
-        <div class="exp-eyebrow">
-          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="#FF9600" stroke-width="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#FF9600" stroke-width="2"/></svg>
-          Experience
-        </div>
-
-        <div class="exp-track">
-          <div class="exp-item ei-active">
-            <div class="ei-node">
-              <svg viewBox="0 0 16 16" fill="none"><polyline points="13 4 6 11 3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="ei-content">
-              <div class="ei-top">
-                <span class="ei-role">UI/UX Designer &amp; Creative Content Writer</span>
-                <span class="ei-now">NOW</span>
-              </div>
-              <span class="ei-org">LocalDev · Content &amp; Design Junior Lead · Jan 2026</span>
-              <p class="ei-note">Designing interfaces and writing content across digital platforms — the two things I never want to separate.</p>
-              <div class="ei-chips">
-                <span class="chip-b">Figma</span><span class="chip-b">Photoshop</span><span class="chip-b">Illustrator</span><span class="chip-b">Adobe Express</span><span class="chip-b">Content Writing</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="exp-item ei-active">
-            <div class="ei-node">
-              <svg viewBox="0 0 16 16" fill="none"><polyline points="13 4 6 11 3 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="ei-content">
-              <div class="ei-top">
-                <span class="ei-role">Core Member — Leading Design &amp; Community</span>
-                <span class="ei-now">NOW</span>
-              </div>
-              <span class="ei-org">CDSC · Student Tech Community · SCOE · Oct 2025</span>
-              <p class="ei-note">Leading UI/UX and documentation for our student community — shaping learning paths, content, and outreach across DSA, AI/ML, Web Dev, and Design tracks.</p>
-              <div class="ei-chips">
-                <span class="chip-b">Leadership</span><span class="chip-b">Design Systems</span><span class="chip-b">Community Building</span><span class="chip-b">Recruitment</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="exp-item ei-ghost">
-            <div class="ei-node ei-node-ghost">
-              <svg viewBox="0 0 16 16" fill="none"><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.8"/></svg>
-            </div>
-            <div class="ei-content">
-              <div class="ei-top">
-                <span class="ei-role">Assistant Editor</span>
-                <span class="ei-badge-gray">2023 – Now</span>
-              </div>
-              <span class="ei-org">Anonymous Author · Remote</span>
-              <p class="ei-note">Manuscript editing, structural feedback, content development. The work that shapes a book into what it's supposed to be.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- ═══════════ 4 · RED · PROJECTS ═══════════ -->
+<section class="era era-red" id="s-projects" data-era="Red" data-chip-bg="#F3E7CF" data-chip-ink="#440201">
+  <div class="leaves" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <h2 class="era-title red-mark"><span class="rm-big">Projects</span><span class="rm-sub">I've built</span></h2>
+    <div class="crate">
+      <article class="sleeve" style="--cov:#F3E7CF;--ink2:#A11D26;--lab:#A11D26;--tilt:-1.2deg">
+        <div class="sleeve-art" tabindex="0"><span class="disc" aria-hidden="true"></span><div class="cover"><small>UI/UX + Android</small><h3>Cursive</h3><em>Feb 2026</em></div></div>
+        <p class="needle" aria-hidden="true"><span>Tap to play</span><b>▸</b></p>
+        <div class="sleeve-info"><p>A privacy-first journaling app built with Kotlin and Firebase. Designed for daily reflection, mood tracking, and building sustainable writing habits through intelligent streak systems.</p><p class="q">"Analytical minds need emotional check-ins just as much as anyone else."</p><p class="stack-line">Kotlin · MVVM · Firebase</p><div class="proj-links"><a class="pl-live" href="https://www.linkedin.com/posts/umasalunke7_%F0%9D%90%B4%F0%9D%91%99%F0%9D%91%99-%F0%9D%91%9A%F0%9D%91%A6-%F0%9D%91%9A%F0%9D%91%9C%F0%9D%91%9F%F0%9D%91%9B%F0%9D%91%96%F0%9D%91%9B%F0%9D%91%94%F0%9D%91%A0-%F0%9D%91%8E%F0%9D%91%9F%F0%9D%91%92-%F0%9D%91%80-activity-7423748755302154240-VXGR?utm_source=social_share_video_v2&utm_medium=android_app&rcm=ACoAAFf4lUMB7UcKtIi8uMidDQr6w2ieVrVEHXg&utm_campaign=copy_link" target="_blank" rel="noopener">▶ Live project</a><a class="pl-src" href="https://github.com/ivy-1602/Cursive" target="_blank" rel="noopener">&lt;/&gt; Source code</a></div></div>
+      </article>
+      <article class="sleeve" style="--cov:#651D01;--ink2:#F3E7CF;--lab:#977763;--tilt:.9deg">
+        <div class="sleeve-art" tabindex="0"><span class="disc" aria-hidden="true"></span><div class="cover"><small>AI · Claude API</small><h3>GiftHub</h3><em>May 2026</em></div></div>
+        <p class="needle" aria-hidden="true"><span>Tap to play</span><b>▸</b></p>
+        <div class="sleeve-info"><p>Gift engine — static, no backend. Claude AI writes personalized gift explanations for each quiz match.</p><p class="stack-line">Vanilla JS · Claude API · Vercel</p><div class="proj-links"><a class="pl-live" href="https://gift-hub-for-your-loved-ones.vercel.app" target="_blank" rel="noopener">▶ Live project</a><a class="pl-src" href="https://github.com/ivy-1602" target="_blank" rel="noopener">&lt;/&gt; Source code</a></div></div>
+      </article>
+      <article class="sleeve" style="--cov:#2E2714;--ink2:#B2BEB4;--lab:#B2BEB4;--tilt:-.6deg">
+        <div class="sleeve-art" tabindex="0"><span class="disc" aria-hidden="true"></span><div class="cover"><small>Bot detection bypass</small><h3>LumaTube</h3><em>Mar 2026</em></div></div>
+        <p class="needle" aria-hidden="true"><span>Tap to play</span><b>▸</b></p>
+        <div class="sleeve-info"><p>Paste any YouTube URL — supports youtube.com and youtu.be &amp; Fetches video title, channel, thumbnail, duration, and view count
+MP4 download — quality selector (144p → 1080p, wherever available)
+MP3 download — audio-only, 320kbps, embedded metadata
+Thumbnail + artist + title auto-embedded into the file</p><p class="stack-line">Node.js/yt-dlp/ffmpeg · Railway · Vanilla HTML, CSS, JS</p><div class="proj-links"><a class="pl-src" href="https://github.com/ivy-1602/LumaTube" target="_blank" rel="noopener">&lt;/&gt; Source code</a></div></div>
+      </article>
     </div>
   </div>
+</section>
 
-  <!-- Path connector -->
-  <div class="path-connector">
-    <div class="pc-line"></div>
-    <div class="pc-node pn-done">
-      <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <div class="pc-line"></div>
+<!-- ═══════════ 5 · 1989 · ARCHIVE ═══════════ -->
+<section class="era era-1989" id="s-archive" data-era="1989" data-chip-bg="#F2C1D1" data-chip-ink="#12243b">
+  <div class="sky" aria-hidden="true">
+    <div class="sun"></div>
+    <span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span><span class="cloud c4"></span><span class="cloud c5"></span>
+    <svg class="gull g1" viewBox="0 0 44 20" aria-hidden="true"><path d="M2 14 Q11 -2 22 12 Q33 -2 42 14" fill="none" stroke="#12243b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="gull g2" viewBox="0 0 44 20" aria-hidden="true"><path d="M2 14 Q11 -2 22 12 Q33 -2 42 14" fill="none" stroke="#12243b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="gull g3" viewBox="0 0 44 20" aria-hidden="true"><path d="M2 14 Q11 -2 22 12 Q33 -2 42 14" fill="none" stroke="#12243b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
-
-  <!-- ── UNIT 2: PROJECTS MAP ── -->
-  <div class="legend-banner" id="s-projects">
-    <div class="lb-shimmer"></div>
-    <div class="lb-crown">
-      <svg viewBox="0 0 40 32" fill="none"><path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/></svg>
-    </div>
-    <div class="lb-text">
-      <div class="lb-section">SECTION 1 · UNIT 2</div>
-      <div class="lb-title">Projects I've Built</div>
-    </div>
-    <div class="lb-xp">
-      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="100"></div></div>
-      <span class="lb-xp-label">6 / 6</span>
-    </div>
-  </div>
-
-  <div class="unit-body">
-    <!-- Project path map -->
-    <div class="proj-map">
-      <!-- Main featured node -->
-      <div class="pm-row pm-center">
-        <div class="pm-node pm-feat reveal">
-          <div class="pm-check pm-check-kiwi">
-            <svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="pm-badges"><span class="pb pb-kiwi">Featured</span><span class="pb pb-blue">UI/UX + Android</span></div>
-          <h3 class="pm-title">Cursive</h3>
-          <p class="pm-desc">Privacy-first mood journaling app — designed a vintage-parchment aesthetic across 13 screens, mood-based theming, and the interactions underneath it. Built in 6 days.</p>
-          <blockquote class="pm-quote">"Analytical minds need emotional check-ins just as much as anyone else."</blockquote>
-          <div class="pm-stack"><span class="stk">Kotlin</span><span class="stk">MVVM</span><span class="stk">Firebase</span></div>
-          <div class="pm-foot"><span class="pm-date">Feb 2026</span><a href="https://github.com/ivy-1602/Cursive" target="_blank" class="pm-link">GitHub →</a></div>
-        </div>
-      </div>
-
-      <!-- Branch line -->
-      <div class="pm-branch-line"></div>
-
-      <!-- Row 2: 2 nodes -->
-      <div class="pm-row pm-two">
-        <div class="pm-node pm-side reveal">
-          <div class="pm-check pm-check-pumpkin"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="pm-badges"><span class="pb pb-pumpkin">AI · Claude API</span></div>
-          <h3 class="pm-title">GiftHub</h3>
-          <p class="pm-desc">Gift engine — static, no backend. Claude AI writes personalized gift explanations for each quiz match.</p>
-          <div class="pm-stack"><span class="stk">Vanilla JS</span><span class="stk">Claude API</span><span class="stk">Vercel</span></div>
-          <div class="pm-foot"><span class="pm-date">May 2026</span><a href="https://gift-hub-for-your-loved-ones.vercel.app" target="_blank" class="pm-link">Live →</a></div>
-        </div>
-        <div class="pm-node pm-side reveal">
-          <div class="pm-check pm-check-banana"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="pm-badges"><span class="pb pb-banana">Student Product</span></div>
-          <h3 class="pm-title">LabLoot</h3>
-          <p class="pm-desc">The Academic Black Market — legal. SPPU notes & lab packs with GA4, SEO, search, security.</p>
-          <div class="pm-stack"><span class="stk">HTML/CSS/JS</span><span class="stk">Vercel</span><span class="stk">GA4</span></div>
-          <div class="pm-foot"><span class="pm-date">Mar 2026</span><a href="https://github.com/ivy-1602/LabLoot-The-Academic-Black-Market-but-legal" target="_blank" class="pm-link">GitHub →</a></div>
-        </div>
-      </div>
-
-      <div class="pm-branch-line"></div>
-
-      <!-- Row 3: 3 nodes -->
-      <div class="pm-row pm-three">
-        <div class="pm-node pm-sm reveal">
-          <div class="pm-check pm-check-kiwi"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="pm-badges"><span class="pb pb-kiwi">ML · Research</span></div>
-          <h3 class="pm-title">GNSS Prediction</h3>
-          <p class="pm-desc">LSTM predicting satellite errors 24h ahead.</p>
-          <div class="pm-stack"><span class="stk">Python</span><span class="stk">LSTM</span></div>
-          <div class="pm-foot"><span class="pm-date">Nov 2025</span></div>
-        </div>
-        <div class="pm-node pm-sm reveal">
-          <div class="pm-check pm-check-blue"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="pm-badges"><span class="pb pb-blue">Platform</span></div>
-          <h3 class="pm-title">LetsConnect</h3>
-          <p class="pm-desc">Mentor-mentee matching. Firebase auth, real-time DB.</p>
-          <div class="pm-stack"><span class="stk">Android Studio</span><span class="stk">Firebase</span></div>
-          <div class="pm-foot"><span class="pm-date">Jun 2025</span></div>
-        </div>
-        <div class="pm-node pm-sm pm-origin reveal">
-          <div class="pm-check pm-check-ghost"><svg viewBox="0 0 20 20" fill="none"><polyline points="17 5 8 14 3 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="pm-badges"><span class="pb pb-cloud">Origin Story</span></div>
-          <h3 class="pm-title">Shree Om</h3>
-          <p class="pm-desc">Made in Notepad. For my father's shop. 9th std. The one that started everything.</p>
-          <div class="pm-stack"><span class="stk">HTML</span><span class="stk">Notepad.exe</span></div>
-          <div class="pm-foot"><span class="pm-date">2019</span><a href="https://github.com/ivy-1602/Shree-Om-Ent-USS-2019-Computer-Fun" target="_blank" class="pm-link">GitHub →</a></div>
-        </div>
-      </div>
+  <div class="wrap">
+    <h2 class="era-title">From the archive</h2>
+    <p class="era-lede">.</p>
+    <div class="polas">
+      <article class="pola" style="--rot:-3deg">
+        <div class="pola-img pi-pink"><svg class="art" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="#12243b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="100" cy="88" rx="74" ry="26" stroke-dasharray="3 7" opacity=".55" transform="rotate(-18 100 88)"/>
+          <g transform="translate(128 60) rotate(-18)"><rect x="-13" y="-8" width="26" height="16" fill="#fff"/><rect x="-42" y="-6" width="24" height="12" fill="#fff"/><rect x="18" y="-6" width="24" height="12" fill="#fff"/></g>
+          <path d="M122 80 L92 150 M122 80 L118 150" stroke-dasharray="2 7" opacity=".6"/>
+          <path d="M28 168 H172" opacity=".4"/><path d="M28 168 C48 150 60 176 78 158 S104 136 122 154 S150 172 172 148" stroke="#c2496f"/>
+        </svg><span class="sticker">ML · Research</span><ul class="stack"><li>Python</li><li>LSTM</li></ul></div>
+        <h3>GNSS Prediction</h3>
+        <p>SIH 2025 PS: LSTM predicting satellite errors 24h ahead. Full working model.</p>
+        <span class="pola-date">Nov 2025</span>
+        <div class="proj-links"><a class="pl-live" href="https://youtu.be/XKQfVC2c1vk?si=8W3UPYQ4qv_TEd91" target="_blank" rel="noopener">▶ Live project</a><a class="pl-src" href="https://github.com/ivy-1602/ML-Practicals-Apr-2026-USS" target="_blank" rel="noopener">&lt;/&gt; Source code</a></div>
+      </article>
+      <article class="pola" style="--rot:2deg">
+        <div class="pola-img pi-blue"><svg class="art" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="#12243b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="58" cy="92" r="17" fill="#fff"/><path d="M28 148 C28 122 88 122 88 148" fill="#fff"/>
+          <circle cx="146" cy="92" r="17" fill="#fff"/><path d="M116 148 C116 122 176 122 176 148" fill="#fff"/>
+          <path d="M80 70 h40 a8 8 0 0 1 8 8 v12 a8 8 0 0 1 -8 8 h-22 l-10 9 v-9 h-8 a8 8 0 0 1 -8 -8 v-12 a8 8 0 0 1 8 -8z" fill="#f28c3b" stroke="#12243b"/>
+          <path d="M92 84 h24 M92 92 h14" stroke-width="2.5"/>
+        </svg><span class="sticker">Platform</span><ul class="stack"><li>Android Studio</li><li>Firebase</li></ul></div>
+        <h3>LetsConnect</h3>
+        <p>Mentor-mentee matching APK to make meaningful connections among campus. Firebase auth, real-time DB.</p>
+        <span class="pola-date">Jun 2025</span>
+        <div class="proj-links"><a class="pl-src" href="https://github.com/ivy-1602/LetsConnect" target="_blank" rel="noopener">&lt;/&gt; Source code</a></div>
+      </article>
+      <article class="pola" style="--rot:-1.5deg">
+        <div class="pola-img pi-sand"><svg class="art" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="#12243b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="52" width="140" height="102" rx="6" fill="#fff"/><path d="M30 74 H170"/>
+          <circle cx="44" cy="63" r="2.5" fill="#12243b"/><circle cx="55" cy="63" r="2.5" fill="#12243b"/><circle cx="66" cy="63" r="2.5" fill="#12243b"/>
+          <text x="44" y="102" font-family="monospace" font-size="15" fill="#12243b" stroke="none">&lt;html&gt;</text>
+          <text x="56" y="122" font-family="monospace" font-size="15" fill="#f28c3b" stroke="none">Mirrorball</text>
+          <text x="44" y="142" font-family="monospace" font-size="15" fill="#12243b" stroke="none">&lt;/html&gt;</text>
+        </svg><span class="sticker">upload.txt</span><ul class="stack"><li>Grok API</li><li>Railway Deployment</li></ul></div>
+        <h3>Mirrorball</h3>
+        <p>Desktop-grade emotional analysis for texts that probably needed analysis.
+Paste or upload a chat between two people and uncover the emotional tone. Detects effort imbalance
+Tracks emotional shifts, Spots mixed signals, Highlights green & red flags, Visualises the mood timeline</p>
+        <span class="pola-date">2026</span>
+        <div class="proj-links"><a class="pl-src" href="https://github.com/ivy-1602/mirrorball" target="_blank" rel="noopener">&lt;/&gt; Source code</a></div>
+      </article>
     </div>
   </div>
+  <div class="wave w1" aria-hidden="true"></div>
+  <div class="wave w2" aria-hidden="true"></div>
+</section>
 
-  <div class="path-connector">
-    <div class="pc-line"></div>
-    <div class="pc-node pn-done"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="pc-line"></div>
-  </div>
-
-  <!-- ── UNIT 3: SKILLS MINDMAP ── -->
-  <div class="legend-banner" id="s-skills">
-    <div class="lb-shimmer"></div>
-    <div class="lb-crown"><svg viewBox="0 0 40 32" fill="none"><path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/></svg></div>
-    <div class="lb-text">
-      <div class="lb-section">SECTION 2 · UNIT 1</div>
-      <div class="lb-title">Skills &amp; Toolkit</div>
-    </div>
-    <div class="lb-xp">
-      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="85"></div></div>
-      <span class="lb-xp-label">85 XP</span>
-    </div>
-  </div>
-
-  <div class="unit-body">
-    <!-- MINDMAP -->
-    <div class="mindmap reveal">
-      <!-- Center -->
-      <div class="mm-center">
-        <div class="mm-core">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.84 2.61 7.06 6.1 8.58C11.39 17.85 11.7 18 12 18s.61-.15.9-.42C16.39 16.06 19 12.84 19 9c0-3.87-3.13-7-7-7z" fill="white"/><circle cx="12" cy="9" r="2.5" fill="#FFB020"/></svg>
-          <span>Uma</span>
-        </div>
-        <!-- Lines to clusters (SVG overlay) -->
-        <svg class="mm-lines" viewBox="0 0 700 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <!-- center ~350,250; clusters roughly at corners+sides -->
-          <line x1="350" y1="250" x2="120" y2="100" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
-          <line x1="350" y1="250" x2="580" y2="100" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
-          <line x1="350" y1="250" x2="80"  y2="300" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
-          <line x1="350" y1="250" x2="620" y2="300" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
-          <line x1="350" y1="250" x2="200" y2="430" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
-          <line x1="350" y1="250" x2="500" y2="430" stroke="rgba(255,255,255,.15)" stroke-width="2" stroke-dasharray="6,4"/>
-        </svg>
-      </div>
-
-      <!-- Cluster cards floating around -->
-      <div class="mm-cluster mm-tl">
-        <div class="mm-cluster-head mm-ch-pumpkin">
-          <svg viewBox="0 0 20 20" fill="none"><path d="M16.5 3a2.5 2.5 0 0 1 0 3.5l-10 10L3 18l1.5-3.5 10-10A2.5 2.5 0 0 1 16.5 3z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Design
-        </div>
-        <div class="mm-pills">
-          <span class="mp mp-p">Photoshop</span><span class="mp mp-p">Illustrator</span><span class="mp mp-p">Adobe Express</span><span class="mp mp-p">Figma</span><span class="mp mp-p">Canva</span><span class="mp mp-p">UI/UX</span><span class="mp mp-p">Editorial Design</span>
-        </div>
-      </div>
-
-      <div class="mm-cluster mm-tr">
-        <div class="mm-cluster-head mm-ch-banana">
-          <svg viewBox="0 0 20 20" fill="none"><polygon points="10 2 12.5 7 18 7.6 14 11.4 15.1 17 10 14.3 4.9 17 6 11.4 2 7.6 7.5 7" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Prompt Eng.
-        </div>
-        <div class="mm-pills">
-          <span class="mp mp-y">System Prompting</span><span class="mp mp-y">Few-Shot</span><span class="mp mp-y">Chain-of-Thought</span><span class="mp mp-y">Structured Output</span>
-        </div>
-      </div>
-
-      
-      <div class="mm-cluster mm-mr">
-        <div class="mm-cluster-head mm-ch-kiwi">
-          <svg viewBox="0 0 20 20" fill="none"><polyline points="14 15 18 10 14 5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="6 5 2 10 6 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Languages
-        </div>
-        <div class="mm-pills">
-          <span class="mp mp-k">Python</span><span class="mp mp-k">Kotlin</span><span class="mp mp-k">Java</span><span class="mp mp-k">JavaScript</span><span class="mp mp-k">SQL</span><span class="mp mp-k">HTML/CSS</span>
-        </div>
-      </div>
-
-      <div class="mm-cluster mm-bl">
-        <div class="mm-cluster-head mm-ch-blue">
-          <svg viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="11" rx="2" stroke="white" stroke-width="1.8"/><line x1="7" y1="18" x2="13" y2="18" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="10" y1="14" x2="10" y2="18" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
-          Development
-        </div>
-        <div class="mm-pills">
-          <span class="mp mp-b">Android Studio</span><span class="mp mp-b">React</span><span class="mp mp-b">Node.js</span><span class="mp mp-b">Firebase</span><span class="mp mp-b">Vercel</span><span class="mp mp-b">Supabase</span>
-        </div>
-      </div>
-
-      <div class="mm-cluster mm-br">
-        <div class="mm-cluster-head mm-ch-jelly">
-          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="white" stroke-width="1.8"/><path d="M6 10c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="10" r="1.5" fill="white"/></svg>
-          AI / ML
-        </div>
-        <div class="mm-pills">
-          <span class="mp mp-j">TensorFlow</span><span class="mp mp-j">scikit-learn</span><span class="mp mp-j">LSTM</span><span class="mp mp-j">NLP</span><span class="mp mp-j">Claude API</span>
-        </div>
-      </div>
-      <div class="mm-cluster mm-ml">
-        <div class="mm-cluster-head mm-ch-rasp">
-          <svg viewBox="0 0 20 20" fill="none"><path d="M10 2c-1.1 0-2 .9-2 2v2H4v2h1l1 8h8l1-8h1V6h-4V4c0-1.1-.9-2-2-2zM8 6V4h4v2H8z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Languages Spoken
-        </div>
-        <div class="mm-pills">
-          <span class="mp mp-r">English <em>Fluent</em></span>
-          <span class="mp mp-r">Hindi <em>Native</em></span>
-          <span class="mp mp-r">Marathi <em>Native</em></span>
-          <span class="mp mp-r">Spanish <em>Learning</em></span>
-          <span class="mp mp-r">German <em>Learning</em></span>
-        </div>
-      </div>
+<!-- ═══════════ 6 · REPUTATION · EXPERIENCE ═══════════ -->
+<section class="era era-rep" id="s-experience" data-era="Reputation" data-chip-bg="#4A0E17" data-chip-ink="#F5F5F0">
+  <div class="wrap">
+    <header class="paper-head">
+      <p class="mast-line"><span>2026</span><span>Version 7</span><span>2007</span></p>
+      <h2 class="era-title">Experience</h2>
+    </header>
+    <div class="rep-cols">
+      <article class="rep-col rep-lead">
+        <p class="rep-date">Jan 2026 · now</p>
+        <h3>UI/UX Designer &amp; Creative Content Writer</h3>
+        <div class="rep-more"><div><p class="rep-org">LocalDev · Content &amp; Design Junior Lead</p>
+        <p>Designing projects and writing content across digital platforms.</p>
+        <ul class="rep-tags"><li>Figma</li><li>Framer</li><li>Illustrator</li><li>Adobe Express</li><li>Content Writing</li></ul></div></div>
+      </article>
+      <article class="rep-col">
+        <p class="rep-date">Oct 2025 · now</p>
+        <h3>Core Member — Design &amp; Documentation</h3>
+        <div class="rep-more"><div><p class="rep-org">CDSC · Student Tech Community · SCOE</p>
+        <p>Leading UI/UX and documentation for our student community.</p>
+        <ul class="rep-tags"><li>Leadership</li><li>Design Systems</li><li>Community Building</li></ul></div></div>
+      </article>
+      <article class="rep-col">
+        <p class="rep-date">2023 – now</p>
+        <h3>Assistant Editor</h3>
+        <div class="rep-more"><div><p class="rep-org">Anonymous Author · Remote</p>
+        <p>Draft editing, structural feedback, plot development. The work that shapes a book into what it's supposed to be.</p></div></div>
+      </article>
     </div>
   </div>
+</section>
 
-  <div class="path-connector">
-    <div class="pc-line"></div>
-    <div class="pc-node pn-done"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="pc-line"></div>
-  </div>
-
-  <!-- ── UNIT 4: HONORS ── -->
-  <div class="legend-banner" id="s-honors">
-    <div class="lb-shimmer"></div>
-    <div class="lb-crown"><svg viewBox="0 0 40 32" fill="none"><path d="M4 28L2 8l8 8 10-14 10 14 8-8-2 20H4z" fill="white" opacity=".9"/></svg></div>
-    <div class="lb-text">
-      <div class="lb-section">SECTION 2 · UNIT 2</div>
-      <div class="lb-title">Honors &amp; Achievements</div>
-    </div>
-    <div class="lb-xp">
-      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="100"></div></div>
-      <span class="lb-xp-label">100 XP</span>
-    </div>
-  </div>
-
-  <div class="unit-body">
-    <div class="honors-list">
-      <div class="hon-item hon-gold reveal">
-        <div class="hon-icon hon-i-gold"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" fill="#FFC300" stroke="#FFC300" stroke-width="1"/></svg></div>
-        <div class="hon-body"><div class="hon-title">Head Girl Prefect</div><div class="hon-sub">Reappointed on merit · 4 consecutive years</div></div>
-        <span class="hon-yr">2019–23</span>
-      </div>
-      <div class="hon-item hon-kiwi reveal">
-        <div class="hon-icon hon-i-kiwi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z" stroke="#7AC70C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="hon-body"><div class="hon-title">97/100 English — CBSE Boards</div><div class="hon-sub">Topped Maharashtra</div></div>
-        <span class="hon-yr">2022</span>
-      </div>
-      <div class="hon-item hon-blue reveal">
-        <div class="hon-icon hon-i-blue"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7a2 2 0 0 1 1.72 2.03z" stroke="#1CB0F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="hon-body"><div class="hon-title">FE Induction Ceremony Speaker</div><div class="hon-sub">First Year Rank Holder · SCOE</div></div>
-        <span class="hon-yr">2025</span>
-      </div>
-      <div class="hon-item reveal">
-        <div class="hon-icon hon-i-pumpkin"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="7" stroke="#FA811B" stroke-width="2"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" stroke="#FA811B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="hon-body"><div class="hon-title">Runner-Up — AI-Powered Web Dev</div><div class="hon-sub">College level competition</div></div>
-        <span class="hon-yr">2026</span>
-      </div>
-      <div class="hon-item reveal">
-        <div class="hon-icon hon-i-jelly"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="7" stroke="#8549BA" stroke-width="2"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" stroke="#8549BA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="hon-body"><div class="hon-title">Winner — Prompt-Driven UI Design</div><div class="hon-sub">College level contest</div></div>
-        <span class="hon-yr">2025</span>
-      </div>
-      <div class="hon-item reveal">
-        <div class="hon-icon hon-i-kiwi"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" fill="#7AC70C"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" stroke="#7AC70C" stroke-width="2" stroke-linecap="round"/></svg></div>
-        <div class="hon-body"><div class="hon-title">District Rank 1</div><div class="hon-sub">Chess &amp; Badminton</div></div>
-        <span class="hon-yr">2022</span>
-      </div>
-      <div class="hon-item reveal">
-        <div class="hon-icon hon-i-pumpkin"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#FA811B" stroke-width="2"/><polyline points="12 6 12 12 16 14" stroke="#FA811B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="hon-body"><div class="hon-title">Girls Basketball Team Captain</div><div class="hon-sub">Team leadership</div></div>
-        <span class="hon-yr">2021–23</span>
-      </div>
-      <div class="hon-item reveal">
-        <div class="hon-icon hon-i-blue"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1CB0F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="#1CB0F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <div class="hon-body"><div class="hon-title">Best Research Report Award</div><div class="hon-sub">Narcotics Control</div></div>
-        <span class="hon-yr">2021</span>
-      </div>
-    </div>
-
-    <!-- Certs -->
-    <div class="certs-wrap reveal">
-      <div class="certs-eyebrow">Certifications &amp; Simulations</div>
-      <div class="certs-grid">
-                <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><path d="M17 7A7 7 0 0 0 3 7c0 5 7 11 7 11s7-6 7-11z" stroke="#FA811B" stroke-width="1.8" stroke-linecap="round"/><circle cx="10" cy="7" r="2" fill="#FA811B"/></svg><div><span>Human-Centered Design</span><em>Canva</em></div></div>
-        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="#1CB0F6" stroke-width="1.8"/><path d="M2 10h16M10 2a13 13 0 0 1 3 8 13 13 0 0 1-3 8 13 13 0 0 1-3-8 13 13 0 0 1 3-8z" stroke="#1CB0F6" stroke-width="1.8"/></svg><div><span>AI in Education</span><em>Canva</em></div></div>
-
-        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="3" width="16" height="12" rx="2" stroke="#7AC70C" stroke-width="1.8"/><line x1="7" y1="18" x2="13" y2="18" stroke="#7AC70C" stroke-width="1.8" stroke-linecap="round"/></svg><div><span>GenAI Powered Data Analytics</span></div></div>
-        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><path d="M10 18s7-3 7-8V4L10 2 3 4v6c0 5 7 8 7 8z" stroke="#FA811B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div><span>Solutions Architecture</span><em>AWS</em></div></div>
-        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><line x1="10" y1="1" x2="10" y2="19" stroke="#FFC300" stroke-width="1.8" stroke-linecap="round"/><path d="M14 4H8a2.5 2.5 0 1 0 0 5h4a2.5 2.5 0 1 1 0 5H5" stroke="#FFC300" stroke-width="1.8" stroke-linecap="round"/></svg><div><span>Operations Simulation</span><em>Goldman Sachs</em></div></div>
-        <div class="cert-tile"><svg viewBox="0 0 20 20" fill="none"><polygon points="5 3 17 10 5 17" fill="#8549BA"/></svg><div><span>Software Engineering</span><em>Electronic Arts</em></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="path-connector">
-    <div class="pc-line"></div>
-    <div class="pc-node pn-active"><svg viewBox="0 0 24 24" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="white"/></svg></div>
-    <div class="pc-line"></div>
-  </div>
-
-  <!-- ── UNIT 5: BEYOND ── -->
-  <div class="legend-banner lb-rasp" id="s-beyond">
-    <div class="lb-shimmer"></div>
-    <div class="lb-crown"><svg viewBox="0 0 40 32" fill="none"><path d="M20 4l4 8 9 1.3-6.5 6.3 1.5 9L20 24l-8 4.6L13.5 19.6 7 13.3 16 12z" fill="white" opacity=".9"/></svg></div>
-    <div class="lb-text">
-      <div class="lb-section">SECTION 3 · UNIT 1</div>
-      <div class="lb-title">Beyond the Build</div>
-    </div>
-    <div class="lb-xp">
-      <div class="lb-xp-track"><div class="lb-xp-fill" data-w="70"></div></div>
-      <span class="lb-xp-label">In Progress</span>
-    </div>
-  </div>
-
-  <div class="unit-body">
-    <div class="beyond-layout">
-      <div class="beyond-quote-card reveal">
-        <div class="bq-bar"></div>
-        <p class="bq-text">"I am in my melancholy lot but I am so productive, it's an art."</p>
-        <p class="bq-src">— from the Cursive README</p>
-        <p class="bq-body">Designer Monday, manuscript Tuesday. Same eye for detail, different canvas.</p>
-      </div>
-      <div class="beyond-cards">
-        <div class="bcard bc-blue reveal">
-          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18V5l12-2v13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="white" stroke-width="2"/><circle cx="18" cy="16" r="3" stroke="white" stroke-width="2"/></svg></div>
-          <h3>Playback Singer &amp; Pianist</h3>
-          <p>Music is where structure and emotion stop arguing.</p>
+<!-- ═══════════ 7 · LOVER · BEYOND ═══════════ -->
+<section class="era era-lover" id="s-beyond" data-era="Lover" data-chip-bg="#FFB7B2" data-chip-ink="#4a2740">
+  <div class="hearts" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <h2 class="era-title">Beyond the build</h2>
+    <div class="love-grid">
+      <article class="love">
+        <button class="love-btn" type="button" aria-expanded="false" aria-controls="love-more-1">
+          <svg class="ico-lg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18V5l12-2v13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>Playback Vocalist &amp; Pianist</h3>
+          <span class="love-plus" aria-hidden="true"></span>
+        </button>
+        <div class="love-more" id="love-more-1" role="region">
+          <div><p class="love-tag">The secret garden of my mind - it is a LABYRINTH, one slip and falling back into the hedge maze.</p>
         </div>
-        <div class="bcard bc-kiwi reveal">
-          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>Draft-Based Novel Writing</h3>
-          <p>Never done until it's finally done.</p>
-        </div>
-        <div class="bcard bc-pumpkin reveal">
-          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="7" r="1.5" fill="white"/></svg></div>
-          <h3>Editorial Design</h3>
-          <p>The kerning kind, not the template kind.</p>
-        </div>
-        <div class="bcard bc-jelly reveal">
-          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="9" height="9" rx="2" stroke="white" stroke-width="2"/><rect x="13" y="2" width="9" height="9" rx="2" stroke="white" stroke-width="2"/><rect x="2" y="13" width="9" height="9" rx="2" stroke="white" stroke-width="2"/><rect x="13" y="13" width="9" height="9" rx="2" stroke="white" stroke-width="2"/></svg></div>
-          <h3>Chess &amp; Badminton</h3>
-          <p>The move you don't make matters just as much.</p>
-        </div>
-        <div class="bcard bc-rasp reveal">
-          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </article>
+      <article class="love">
+        <button class="love-btn" type="button" aria-expanded="false" aria-controls="love-more-2">
+          <svg class="ico-lg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="9" height="9" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="2" width="9" height="9" rx="2" stroke="currentColor" stroke-width="2"/><rect x="2" y="13" width="9" height="9" rx="2" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="9" height="9" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>Fine Arts</h3>
+          <span class="love-plus" aria-hidden="true"></span>
+        </button>
+        <div class="love-more" id="love-more-2" role="region">
+          <div><p class="love-tag">I create through paintings, drawings, and illustration, giving shape to whatever catches my eye.</p></div>
+      </article>
+      <article class="love">
+        <button class="love-btn" type="button" aria-expanded="false" aria-controls="love-more-3">
+          <svg class="ico-lg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <h3>Culinary Arts</h3>
-          <p>You break the system, someone eats the result.</p>
+          <span class="love-plus" aria-hidden="true"></span>
+        </button>
+        <div class="love-more" id="love-more-3" role="region">
+          <div><p class="love-tag">simple, i lovee cooking, especially when it’s for the people I love.</p></div>
+      </article>
+      <article class="love">
+        <button class="love-btn" type="button" aria-expanded="false" aria-controls="love-more-4">
+          <svg class="ico-lg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>Writing</h3>
+          <span class="love-plus" aria-hidden="true"></span>
+        </button>
+        <div class="love-more" id="love-more-4" role="region">
+          <div><p class="love-tag">Essays, journal-style prose and lyric-ish lines. I write to figure out what I actually think.</p></div>
         </div>
-        <div class="bcard bc-banana reveal">
-          <div class="bci"><svg viewBox="0 0 24 24" fill="none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <h3>English Literature</h3>
-          <p>Precision in prose taught me precision in code.</p>
+      </article>
+      <article class="love">
+        <button class="love-btn" type="button" aria-expanded="false" aria-controls="love-more-5">
+          <svg class="ico-lg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>Community</h3>
+          <span class="love-plus" aria-hidden="true"></span>
+        </button>
+        <div class="love-more" id="love-more-5" role="region">
+          <div><p class="love-tag">From OpenAI meetups to student communities, I like being where like minds find each other.</p></div>
         </div>
+      </article>
+    </div>
+  </div>
+  <div class="lover-fade" aria-hidden="true">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="xMidYMax slice">
+      <defs><path id="pn2" d="M0 -70 L14 -40 L7 -40 L18 -15 L8 -15 L22 10 H-22 L-8 -15 L-18 -15 L-7 -40 L-14 -40Z"/></defs>
+      <g fill="#8f9b8d"><use href="#pn2" transform="translate(40 70) scale(0.7)"/><use href="#pn2" transform="translate(95 70) scale(0.55)"/><use href="#pn2" transform="translate(150 70) scale(0.85)"/><use href="#pn2" transform="translate(330 70) scale(0.6)"/><use href="#pn2" transform="translate(385 70) scale(0.8)"/><use href="#pn2" transform="translate(690 70) scale(0.55)"/><use href="#pn2" transform="translate(740 70) scale(0.75)"/><use href="#pn2" transform="translate(790 70) scale(0.6)"/><use href="#pn2" transform="translate(985 70) scale(0.7)"/><use href="#pn2" transform="translate(1040 70) scale(0.55)"/><use href="#pn2" transform="translate(1290 70) scale(0.85)"/><use href="#pn2" transform="translate(1345 70) scale(0.6)"/><use href="#pn2" transform="translate(1400 70) scale(0.75)"/></g>
+      <g><rect x="1120" y="52" width="40" height="22" fill="#5f6b5f"/><polygon points="1112,54 1140,34 1168,54" fill="#4a554b"/><rect class="lf-win" x="1128" y="58" width="9" height="9" fill="#f6c96b"/></g>
+      <path d="M0 100 V68 C300 56 500 74 760 64 S1200 54 1440 66 V100Z" fill="#d9d7cd"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════ 8 · FOLKLORE · WORDS ═══════════ -->
+<section class="era era-folk grain" id="s-words" data-era="folklore" data-chip-bg="#4A524A" data-chip-ink="#D0C9B7">
+  <svg class="folk-scene" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs><path id="pn" d="M0 -70 L14 -40 L7 -40 L18 -15 L8 -15 L22 10 H-22 L-8 -15 L-18 -15 L-7 -40 L-14 -40Z"/>
+      <radialGradient id="cabinGlow"><stop offset="0" stop-color="#f6c96b" stop-opacity=".95"/><stop offset="1" stop-color="#f6c96b" stop-opacity="0"/></radialGradient>
+    </defs>
+    <path d="M0 175 C200 115 380 165 560 135 S900 95 1100 145 S1340 125 1440 145 V300 H0Z" fill="#9aa698"/>
+    <path d="M0 215 C240 165 420 225 700 185 S1100 165 1440 205 V300 H0Z" fill="#748472"/>
+    <use href="#pn" transform="translate(760 158) scale(0.8)" fill="#55645a"/><use href="#pn" transform="translate(800 152) scale(1)" fill="#55645a"/><use href="#pn" transform="translate(845 160) scale(0.7)" fill="#55645a"/><use href="#pn" transform="translate(1180 160) scale(0.9)" fill="#55645a"/><use href="#pn" transform="translate(1225 166) scale(0.7)" fill="#55645a"/><use href="#pn" transform="translate(300 165) scale(0.8)" fill="#55645a"/><use href="#pn" transform="translate(340 172) scale(1)" fill="#55645a"/><use href="#pn" transform="translate(380 168) scale(0.7)" fill="#55645a"/>
+    <g>
+      <circle class="cabin-glow" cx="1041" cy="168" r="34" fill="url(#cabinGlow)"/>
+      <rect x="1064" y="128" width="8" height="18" fill="#2b362d"/>
+      <polygon points="1012,154 1049,126 1086,154" fill="#2b362d"/>
+      <rect x="1020" y="152" width="58" height="32" fill="#333f35"/>
+      <rect class="cabin-win" x="1032" y="161" width="13" height="12" fill="#f6c96b"/>
+      <rect x="1057" y="164" width="10" height="20" fill="#1f281f"/>
+    </g>
+    <path d="M0 262 C300 225 520 268 820 238 S1250 224 1440 254 V300 H0Z" fill="#455447"/>
+    <use href="#pn" transform="translate(90 262) scale(1.9)" fill="#27322a"/><use href="#pn" transform="translate(150 268) scale(1.5)" fill="#27322a"/><use href="#pn" transform="translate(220 262) scale(1.1)" fill="#27322a"/><use href="#pn" transform="translate(1290 258) scale(1.8)" fill="#27322a"/><use href="#pn" transform="translate(1360 266) scale(2.2)" fill="#27322a"/><use href="#pn" transform="translate(1420 262) scale(1.4)" fill="#27322a"/><use href="#pn" transform="translate(640 262) scale(1.0)" fill="#27322a"/><use href="#pn" transform="translate(690 256) scale(0.8)" fill="#27322a"/>
+  </svg>
+  <div class="folk-mist" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap folk-grid">
+    <div class="folk-quote">
+      <h2 class="era-title">manuscripts</h2>
+      <div class="diary">
+        <blockquote>"I grabbed a pen and an old napkin and I wrote down our song."</blockquote>
+      </div>
+    </div>
+    <div class="folk-side">
+      <p class="tl-head">My Contributions to Literature</p>
+      <ol class="folk-list">
+        <li><span class="tn">01</span><div><h3>Was I Ever Enough - Yash Jain</h3><p>Verified top reviewer.</p></div></li>
+        <li><span class="tn">02</span><div><h3>You Were Always Enough - Yash Jain</h3><p>Assisted the creative direction of the next sequel.</p></div></li>
+        <li><span class="tn">03</span><div><h3>Delhi Open Books Publisher</h3><p>Honored for my contributions to authenticity of books.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 9 · EVERMORE · CERTIFICATIONS ═══════════ -->
+<section class="era era-ever" id="s-certs" data-era="evermore" data-chip-bg="#B87333" data-chip-ink="#1e120a">
+  <div class="leaves" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="ever-trees" aria-hidden="true">
+    <svg class="cabin" viewBox="0 -24 320 194" role="presentation" focusable="false">
+      <defs>
+        <linearGradient id="cbGlass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c36e"/><stop offset="1" stop-color="#b9722c"/></linearGradient>
+      </defs>
+      <path class="cb-smoke" d="M236 12C222 -2 252 -8 234 -20" fill="none" stroke="#e9d7c0" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+      <rect x="226" y="14" width="18" height="36" fill="#6a5347"/>
+      <path d="M226 22h18M226 30h18M226 38h18M235 14v8M231 22v8M239 22v8M235 30v8M231 38v8M239 38v8" stroke="#3d2e26" stroke-width="1.4"/>
+      <rect x="224" y="11" width="22" height="5" fill="#3d2e26"/>
+      <path d="M26 148V130L236 44L262 52V148Z" fill="url(#cbGlass)" opacity=".92"/>
+      <path class="cb-lit" d="M176 126h22v22h-22zM100 136h22v12h-22zM224 100h22v24h-22z" fill="#ffe3a0" opacity=".55"/>
+      <g stroke="#5a3519" stroke-width="3" stroke-linecap="round" fill="none"><path d="M50 124V148"/><path d="M76 114V148"/><path d="M100 104V148"/><path d="M124 94V148"/><path d="M150 83V148"/><path d="M176 72V148"/><path d="M200 63V148"/><path d="M224 53V148"/><path d="M248 50V148"/><path d="M56 120H262"/><path d="M115 96H262"/><path d="M173 72H262"/><path d="M26 148V130L236 44L262 52V148"/></g>
+      <path d="M16 128L236 34L272 48L264 58L236 46L28 138Z" fill="#5f7a34"/>
+      <path d="M40 124l40-16 4 6-40 16zM120 100l44-18 4 6-44 18zM190 74l36-14 4 6-36 14z" fill="#7d9a42"/>
+      <g><path d="M44 126v24" stroke="#6f8f3a" stroke-width="2"/><circle cx="44" cy="150" r="3" fill="#8fae4a"/><circle cx="48" cy="145" r="2.2" fill="#6f8f3a"/><path d="M84 109v12" stroke="#6f8f3a" stroke-width="2"/><circle cx="84" cy="121" r="3" fill="#8fae4a"/><circle cx="88" cy="116" r="2.2" fill="#6f8f3a"/><path d="M126 92v12" stroke="#6f8f3a" stroke-width="2"/><circle cx="126" cy="104" r="3" fill="#8fae4a"/><circle cx="130" cy="99" r="2.2" fill="#6f8f3a"/><path d="M168 75v12" stroke="#6f8f3a" stroke-width="2"/><circle cx="168" cy="87" r="3" fill="#8fae4a"/><circle cx="172" cy="82" r="2.2" fill="#6f8f3a"/><path d="M204 60v12" stroke="#6f8f3a" stroke-width="2"/><circle cx="204" cy="72" r="3" fill="#8fae4a"/><circle cx="208" cy="67" r="2.2" fill="#6f8f3a"/></g>
+      <path d="M262 52c6 10 4 26 0 40M262 96c5 8 4 20 1 30" fill="none" stroke="#6f8f3a" stroke-width="2.4"/>
+      <rect x="14" y="148" width="292" height="9" fill="#8a5a33"/>
+      <rect x="14" y="154" width="292" height="3" fill="#4d2f17"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <h2 class="era-title">Certifications &amp; Simulations</h2>
+    <p class="era-lede">Pressed between the pages, kept for good.</p>
+    <div class="certs">
+      <div class="cert-group">
+        <button type="button" class="cert-btn" aria-expanded="false"><span class="cert-yr">2026</span><span class="cert-count">3 certificates</span><span class="cert-plus" aria-hidden="true"></span></button>
+        <div class="cert-more"><div>
+        <ul class="cert-list">
+          <li class="cert" data-stamp="PMI"><span class="c-name">Hands-On AI: Build Your Own GPTs</span><span class="c-by">PMI · Sep 2026</span></li>
+          <li class="cert" data-stamp="FIG"><span class="c-name">Figma: Handing off to Developers</span><span class="c-by">Figma · Sep 2026</span></li>
+          <li class="cert" data-stamp="ALI"><span class="c-name">Master of Persuasive Writing</span><span class="c-by">Alison · Jan 2026</span></li>
+        </ul>
+        </div></div>
+      </div>
+      <div class="cert-group">
+        <button type="button" class="cert-btn" aria-expanded="false"><span class="cert-yr">2025</span><span class="cert-count">8 certificates</span><span class="cert-plus" aria-hidden="true"></span></button>
+        <div class="cert-more"><div>
+        <ul class="cert-list">
+          <li class="cert" data-stamp="TCS"><span class="c-name">GenAI Powered Data Analytics</span><span class="c-by">TCS · Jun 2025</span></li>
+          <li class="cert" data-stamp="AWS"><span class="c-name">Solutions Architecture Virtual Experience</span><span class="c-by">AWS · Jun 2025</span></li>
+          <li class="cert" data-stamp="CYB"><span class="c-name">Ethical Hacking: Cryptography</span><span class="c-by">Cybrary · Mar 2025</span></li>
+          <li class="cert" data-stamp="CRS"><span class="c-name">SEO with Squarespace</span><span class="c-by">Coursera · Mar 2025</span></li>
+          <li class="cert" data-stamp="CNV"><span class="c-name">Create &amp; Design Digital Products</span><span class="c-by">Canva · Feb 2025</span></li>
+          <li class="cert" data-stamp="EA"><span class="c-name">Software Engineering Job Simulation</span><span class="c-by">Electronic Arts · Jan 2025</span></li>
+          <li class="cert" data-stamp="GS"><span class="c-name">Operations Job Simulation</span><span class="c-by">Goldman Sachs · Jan 2025</span></li>
+          <li class="cert" data-stamp="ACN"><span class="c-name">Digital Skills: AI</span><span class="c-by">Accenture · Jan 2025</span></li>
+        </ul>
+        </div></div>
+      </div>
+      <div class="cert-group">
+        <button type="button" class="cert-btn" aria-expanded="false"><span class="cert-yr">Earlier</span><span class="cert-count">2 certificates</span><span class="cert-plus" aria-hidden="true"></span></button>
+        <div class="cert-more"><div>
+        <ul class="cert-list">
+          <li class="cert" data-stamp="CNV"><span class="c-name">Human-Centered Design</span><span class="c-by">Canva</span></li>
+          <li class="cert" data-stamp="CNV"><span class="c-name">AI in Education</span><span class="c-by">Canva</span></li>
+        </ul>
+        </div></div>
       </div>
     </div>
   </div>
+</section>
 
-</div><!-- /path-wrap -->
-
-<!-- ═══════════════ CONTACT ═══════════════ -->
-<section class="contact-sec" id="s-contact">
-  <div class="contact-glow"></div>
-  <div class="contact-inner">
-    <h2 class="contact-h">let's<br><span>talk</span></h2>
-    <p class="contact-sub">Project, collaboration, role, or just a good conversation.</p>
-    <div class="contact-cards">
-      <a href="mailto:umasalunke7@gmail.com" class="cc cc-kiwi">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="white" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>umasalunke7@gmail.com</span>
-      </a>
-      <a href="https://linkedin.com/in/umasalunke7" target="_blank" class="cc cc-blue">
-        <svg viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.5A6 6 0 0 1 16 8zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-        <span>linkedin/umasalunke7</span>
-      </a>
-      <a href="https://github.com/ivy-1602" target="_blank" class="cc cc-dark">
-        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
-        <span>github/ivy-1602</span>
-      </a>
-      <a href="https://x.com/umasalunke16" target="_blank" class="cc cc-jelly">
-        <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        <span>@umasalunke16</span>
-      </a>
+<!-- ═══════════ 10 · MIDNIGHTS · NUMBERS + LANGUAGES ═══════════ -->
+<section class="era era-mid" id="s-numbers" data-era="Midnights" data-chip-bg="#CD7F32" data-chip-ink="#0F172A">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="era-title">By the numbers</h2>
+    <div class="mid-grid">
+    <div class="mid-stats">
+    <dl class="stats">
+      <div class="stat"><dt>latest CGPA (9.77)</dt><dd data-count="9">9.77</dd></div>
+      <div class="stat"><dt>languages spoken</dt><dd data-count="5">5</dd></div>
+      <div class="stat"><dt>years of me being me</dt><dd data-count="19">19</dd></div>
+      <div class="stat"><dt>+ LinkedIn followers</dt><dd data-count="1000">1000+</dd></div>
+    </dl>
     </div>
-    <a href="mailto:umasalunke7@gmail.com" class="btn-primary btn-contact-cta">Say Hello →</a>
+    <div class="mid-langs">
+    <h3 class="tracks-title">Languages I speak</h3>
+    <ul class="tracks">
+      <li style="--lvl:100%"><span>English</span><em>Fluent</em><b class="bar" aria-hidden="true"></b></li>
+      <li style="--lvl:100%"><span>Hindi</span><em>Native</em><b class="bar" aria-hidden="true"></b></li>
+      <li style="--lvl:100%"><span>Marathi</span><em>Native</em><b class="bar" aria-hidden="true"></b></li>
+      <li style="--lvl:80%"><span>Spanish</span><em>Intermediate</em><b class="bar" aria-hidden="true"></b></li>
+      <li style="--lvl:70%"><span>German</span><em>Intermediate</em><b class="bar" aria-hidden="true"></b></li>
+    </ul>
+    </div>
+    </div>
   </div>
 </section>
+
+<!-- ═══════════ 11 · TTPD · MY LETTER ═══════════ -->
+<section class="era era-ttpd grain" id="s-letter" data-era="TTPD" data-chip-bg="#1C1C1C" data-chip-ink="#EBE6DF">
+  <div class="wrap">
+    <article class="letter" id="letter">
+      <h2 class="era-title">My Letter</h2>
+      <p class="typed">Dear reader,</p>
+<p class="typed">You might have noticed I don’t fit only into one box.</p>
+<p class="typed">Code, design, writing, art, emotions, people, the list keeps growing.</p>
+<p class="typed">It might look scattered from one perspective. From another, it’s versatility. I’ll leave that perspective upon you.</p>
+      <p class="typed sign">Sincerely, Uma</p>
+    </article>
+  </div>
+</section>
+
+<!-- ═══════════ 12 · THE LIFE OF A SHOWGIRL · CONTACT ═══════════ -->
+<section class="era era-show" id="s-contact" data-era="Showgirl" data-chip-bg="#E15921" data-chip-ink="#000000">
+  <canvas id="glitter2" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="paper-frame">
+      <div class="paper-in">
+        <h2 class="era-title">Let's talk</h2>
+        <p class="contact-sub">Project, collaboration, role, or just a good conversation.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:umasalunke7@gmail.com">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            umasalunke7@gmail.com</a></li>
+          <li><a href="https://linkedin.com/in/umasalunke7" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7H10V9h4v1.5A6 6 0 0 1 16 8zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+            linkedin/umasalunke7</a></li>
+          <li><a href="https://github.com/ivy-1602" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+            github/ivy-1602</a></li>
+          <li><a href="https://x.com/umasalunke16" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            @umasalunke16</a></li>
+        </ul>
+        <a href="mailto:umasalunke7@gmail.com" class="btn btn-paper">Send an email</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
 <footer class="footer">
-  <span class="f-logo">ivy<span class="kiwi">.</span></span>
-  <span class="f-mid">Designs.Novel drafts. Piano keys. LSTM models. Same curiosity, different outputs.</span>
-  <span class="f-copy">© 2026 Uma Salunke</span>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <span class="f-logo">ivy<span>.</span></span>
+      <p>AI/ML student,UI/UX designer and content writer</p>
+    </div>
+    <nav aria-label="Footer">
+      <h4>Explore</h4>
+      <a href="#s-about">About</a>
+      <a href="#s-skills">Skills</a>
+      <a href="#s-projects">Projects</a>
+      <a href="#s-experience">Experience</a>
+      <a href="#s-letter">My Letter</a>
+    </nav>
+    <div>
+      <h4>Elsewhere</h4>
+      <a href="https://linkedin.com/in/umasalunke7" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/ivy-1602" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://x.com/umasalunke16" target="_blank" rel="noopener">X</a>
+      <a href="https://g.dev/umasalunke7" target="_blank" rel="noopener">G.Dev</a>
+    </div>
+    <div>
+      <h4>Say hello</h4>
+      <a href="mailto:umasalunke7@gmail.com">umasalunke7@gmail.com</a>
+      <a class="ft-cta" href="https://drive.google.com/uc?export=download&id=13EffgS2p0Ss7Y4Sz3GtT6G7TKkRJPcJ_">My Resume</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="f-copy">© 2026 Uma Salunke</span>
+    <span class="f-mid">Designs. Novel drafts. Piano keys. LSTM models. Same curiosity, different outputs.</span>
+    <a class="ft-up" href="#home">Back to top ↑</a>
+  </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
