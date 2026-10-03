@@ -1021,3 +1021,85 @@ button{font:inherit}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .hearts,.leaves{display:none}
 }
+
+/* ===== Beyond the build: one card, rows expand smoothly ===== */
+.love-grid{display:block;max-width:720px;margin:0 auto;padding:.3rem 1.4rem;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.9);border-radius:20px;box-shadow:0 18px 40px -22px rgba(122,47,92,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.love{flex:none;max-width:none;background:none!important;border:0;border-radius:0;box-shadow:none!important;text-align:left;border-bottom:1px solid rgba(122,47,92,.16)}
+.love:last-child{border-bottom:0}
+.love-btn{flex-direction:row;justify-content:flex-start;gap:.9rem;padding:.95rem .1rem}
+.love .ico-lg{width:1.3rem;height:1.3rem;margin:0;flex:none}
+.love h3{min-height:0;display:block;flex:1;font-size:.95rem;letter-spacing:.02em;text-align:left}
+.love-plus{margin:0 0 0 auto;flex:none;width:1.2rem;height:1.2rem;background:none;border:1.5px solid #c2496f}
+.love-plus::before,.love-plus::after{background:#c2496f;width:.6rem;height:1.5px}
+.love-more>div{padding:0 .1rem 0 2.2rem!important}
+.love-more p{font-size:.92rem;text-align:left}
+@media (max-width:560px){
+  .love-grid{padding:.2rem 1rem;border-radius:16px}
+  .love-btn{padding:.8rem 0}
+  .love h3{font-size:.85rem}
+  .love .ico-lg{width:1.15rem;height:1.15rem}
+  .love-more>div{padding-left:2rem!important}
+}
+
+/* ===== Skills: calm vertical list, rows expand down to capsules ===== */
+.spells{display:block!important;max-width:760px;margin:0 auto;padding:0;background:none;border:0;outline:0;box-shadow:none;border-top:1px solid rgba(238,220,130,.35)}
+.spells .spell{display:block!important;flex:none;padding:0!important;background:none;border:0;border-bottom:1px solid rgba(238,220,130,.35);outline:0;box-shadow:none;border-radius:0}
+.spells .spell::before{display:none}
+.spells .spell .spell-btn{display:flex;align-items:center;padding:.9rem .2rem!important;cursor:pointer;pointer-events:auto}
+.spells .spell .spell-btn:focus-visible{outline:2px solid #EEDC82;outline-offset:2px}
+.spells .spell .spell-btn h3{display:flex;align-items:center;color:#f1e8f6;font-size:.82rem;letter-spacing:.22em;font-weight:600}
+.spells .spell .spell-btn h3::before{content:counter(sp,upper-roman);min-width:2rem;font-size:.7rem;letter-spacing:.1em;color:#EEDC82;opacity:.75}
+.spells .spell .love-plus{display:block!important;width:1.1rem;height:1.1rem;margin:0;background:none;border:1.5px solid #EEDC82}
+.spells .spell .love-plus::before,.spells .spell .love-plus::after{width:.55rem;height:1.5px;background:#EEDC82}
+.spells .spell-more{grid-column:auto;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.4,0,.2,1)}
+.spells .spell.open .spell-more{grid-template-rows:1fr}
+.spells .spell-more>div{overflow:hidden;padding:0 .2rem 0 2.2rem!important;opacity:0;transition:opacity .25s ease}
+.spells .spell.open .spell-more>div{opacity:1;transition-delay:.12s}
+.spells .spell-more>div::after{content:"";display:block;height:1rem}
+.spells .spell .pills{display:flex;flex-wrap:wrap;gap:.45rem;margin:0}
+.spells .spell .pills li{background:transparent;color:#f1e8f6;border:1px solid rgba(238,220,130,.55);font-size:.7rem;letter-spacing:.1em;padding:.3rem .8rem;border-radius:999px}
+.spells .spell .pills li:hover{background:rgba(238,220,130,.14);border-color:#EEDC82;color:#EEDC82}
+@media (max-width:560px){
+  .spells .spell .spell-btn h3{font-size:.74rem;letter-spacing:.16em}
+  .spells .spell-more>div{padding-left:2rem!important}
+}
+/* ═════════ v7 · orange CTAs, smaller handles, tighter Experience + Skills text ═════════ */
+
+/* CTAs: orange by default, white on hover */
+.btn-paper,
+.cc-btns a{background:var(--orange);color:#000;border-color:var(--orange)}
+.btn-paper:hover,.btn-paper:focus-visible,
+.cc-btns a:hover,.cc-btns a:focus-visible{background:#fff;color:#000;border-color:#fff;text-decoration:underline;text-underline-offset:4px}
+
+/* Handle capsules (LinkedIn / GitHub / G.Dev / X): smaller */
+.era-debut .link-row{gap:.35rem}
+.era-debut .pill-link{padding:.2rem .6rem;font-size:.74rem;gap:.35rem;border-width:1.5px}
+.era-debut .pill-link .ico{width:.85rem;height:.85rem}
+@media (max-width:560px){
+  .era-debut .pill-link{padding:.15rem .5rem;font-size:.64rem;gap:.3rem}
+  .era-debut .pill-link .ico{width:.75rem;height:.75rem}
+}
+
+/* Experience: headings stop breaking, body text smaller */
+@media (max-width:860px){
+  .rep-col h3,.rep-lead h3{text-wrap:balance;overflow-wrap:normal;word-break:normal;hyphens:none}
+}
+@media (min-width:561px) and (max-width:860px){
+  .rep-col h3{font-size:1.2rem;line-height:1.08}
+  .rep-lead h3{font-size:1.4rem}
+  .rep-col p,.rep-org{font-size:.85rem;line-height:1.4}
+  .rep-tags li{font-size:.62rem}
+}
+@media (max-width:560px){
+  .rep-col h3{font-size:.98rem;line-height:1.08}
+  .rep-col p{font-size:.8rem;line-height:1.4}
+  .rep-org{font-size:.76rem}
+  .rep-tags li{font-size:.6rem}
+}
+
+/* Skills: smaller capsule text */
+.spells .spell .pills li{font-size:.62rem;letter-spacing:.08em;padding:.22rem .65rem}
+@media (max-width:560px){
+  .spells .spell .pills li{font-size:.58rem;padding:.18rem .55rem}
+  .spells .spell .spell-btn h3{font-size:.7rem}
+}
