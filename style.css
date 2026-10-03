@@ -917,12 +917,12 @@ button{font:inherit}
 @media (max-width:560px){
   .era-show{padding-top:2rem;padding-bottom:1.8rem}
   .paper-frame{padding:10px}
-  .paper-in{padding:1.2rem .75rem 1.3rem}
+  .paper-in{padding:1.2rem .6rem 1.3rem}
   .era-show .era-title{font-size:2.5rem;margin-bottom:.3rem}
   .contact-sub{font-size:1rem;line-height:1.35;margin-bottom:.9rem}
-  .contact-list{grid-template-columns:1fr 1fr;gap:0 .8rem;margin-bottom:1rem}
-  .contact-list a{padding:.5rem 0;font-size:.86rem;gap:.35rem;border-bottom-width:1px}
-  .contact-list svg{width:16px;height:16px;flex:none}
+  .contact-list{grid-template-columns:1fr 1fr;gap:0 .6rem;margin-bottom:1rem}
+  .contact-list a{padding:.5rem 0;font-size:clamp(.6rem,3.2vw,.8rem);gap:.3rem;border-bottom-width:1px;white-space:nowrap;word-break:normal}
+  .contact-list svg{width:13px;height:13px;flex:none}
   .era-show .btn{font-size:1.2rem;padding:.65rem 1.4rem .55rem}
 }
 
@@ -960,7 +960,7 @@ button{font:inherit}
   .ft-top>div:last-child h4{flex-basis:100%;margin:0}
   .footer a.ft-cta{margin:0;padding:.4rem 1rem .3rem;font-size:1.05rem}
   .ft-bottom{flex-direction:row;align-items:center;gap:.2rem 1rem;padding-top:.7rem;font-size:.74rem}
-  .ft-bottom .f-mid{display:none}
+  .ft-bottom .f-mid{display:block;order:3;flex-basis:100%;font-size:.72rem;line-height:1.35}
   .footer a.ft-up{font-size:1rem}
 }
 
@@ -1103,4 +1103,3 @@ button{font:inherit}
   .spells .spell .pills li{font-size:.58rem;padding:.18rem .55rem}
   .spells .spell .spell-btn h3{font-size:.7rem}
 }
-@media (max-width:360px){.contact-list a{font-size:.78rem}}
