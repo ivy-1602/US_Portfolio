@@ -1,4 +1,4 @@
-/* Uma Salunke · portfolio  */
+/* Uma Salunke · portfolio — matches index.html / style.css */
 (function(){
 'use strict';
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -64,23 +64,7 @@ btn.setAttribute('aria-expanded','true');
 });
 };
 accordion('.love','.love-btn');
-var wideMQ=matchMedia('(min-width:841px)');
-accordion('.spell','.spell-btn',function(){return!wideMQ.matches});
-var syncSpells=function(){
-$$('.spell').forEach(function(c){
-var b=c.querySelector('.spell-btn');
-if(wideMQ.matches){
-c.classList.remove('open');
-b.setAttribute('aria-expanded','true');
-b.setAttribute('tabindex','-1');
-}else{
-b.setAttribute('aria-expanded',String(c.classList.contains('open')));
-b.removeAttribute('tabindex');
-}
-});
-};
-syncSpells();
-if(wideMQ.addEventListener)wideMQ.addEventListener('change',syncSpells);
+accordion('.spell','.spell-btn');
 
 /* ── Experience: tap to expand on phones ── */
 var repMQ=matchMedia('(max-width:560px)');
